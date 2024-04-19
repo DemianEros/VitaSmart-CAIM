@@ -1,0 +1,121 @@
+/* estilos.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('Imagenes/Fondo10.webp'); /* Ruta de la imagen de fondo */
+    background-size: all;
+    background-position: center;
+}
+
+header {
+    background-image: url('Imagenes/baner3.avif');
+    background-size: cover;
+    color: #ffffff;
+    padding: 20px 0; /* Aumentar el padding superior e inferior para hacer el encabezado más grande */
+    text-align: center;
+}
+
+.nav-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block; /* Para alinear los elementos de la barra de navegación */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.nav-bar li {
+    display: inline;
+    margin-right: 50px;
+    font-size: 25px; 
+    text-decoration: none; /* Eliminar la decoración de texto predeterminada */
+    font-weight: bold; /* Peso de la fuente en negrita */
+    padding: 8px 15px; /* Espaciado interno de los elementos de navegación */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background-color 0.3s;
+}
+
+.navegacion:hover{
+    background-color: #a569bd;
+}
+
+.nav-bar li a {
+    color: #ffffff;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+#menu-toggle {
+    float: left; /* Mover el botón del menú a la izquierda */
+    margin-left: 20px; /* Ajustar el margen izquierdo según sea necesario */
+    margin-right: 20px; /* Agregar margen derecho para separarlo de los otros elementos */
+    color: #3fd2ff;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgb(0, 10, 65);
+}
+
+.user-info {
+    display: inline;
+    margin-right: 50px;
+    font-size: 25px; 
+    text-decoration: none; /* Eliminar la decoración de texto predeterminada */
+    font-weight: bold; /* Peso de la fuente en negrita */
+    padding: 8px 15px; /* Espaciado interno de los elementos de navegación */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background-color 0.3s;
+}
+
+.user-info:hover{
+    background-color: #a569bd;
+}
+
+.user-info a {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.user-info ul {
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+    max-height: 0;
+    background-color: #005688bb;
+    padding: 10px;
+    right: 10px;
+    top: 40px;
+    z-index: 1;
+}
+.user-info.open ul {
+    display: block; /* Cuando se agrega la clase "open", muestra el menú */
+    max-height: 200px; /* Altura máxima para el menú desplegado */
+  }
+
+.user-info ul li {
+    margin-bottom: 30px;
+}
+
+#off{
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+#logo {
+    display: inline; /* Para que el ancho y el alto se ajusten automáticamente al contenido */
+    text-align: center;
+    font-family: inherit;
+    color: #CCB777;
+}
+
+#logo img {
+    width: 80px; /* Ajusta el ancho de tu logo según sea necesario */
+    height: auto; /* Altura automática para mantener la proporción */
+}

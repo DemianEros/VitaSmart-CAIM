@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/016/939/143/original/abstract-dark-blue-background-with-gradient-slashes-free-vector.jpg');    
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-registro {
+    margin-right: 4%; /* Reduje el margen izquierdo para hacer espacio para el sidebar */
+    background-color: #02173083; /* Azul oscuro */
+    padding: .5vw; /* Utiliza vw para hacer el relleno responsive */
+    border-radius: 3vw; /* Utiliza vw para hacer el radio del borde responsive */
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.5); /* Utiliza vw para hacer la sombra responsive */
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    max-width: 60%; /* Cambié el porcentaje del ancho máximo */
+    width: 50%;
+}
+
+.sidebar {
+    width: 40%;
+    height: 100vh;
+    background-color: #02173083; /* Azul oscuro */
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar img {
+    width: 80%; /* Ajusta el ancho de la imagen */
+    margin: 1px; /* Espaciado inferior */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    text-align: center;
+    width: 70%; /* Utiliza porcentaje para el ancho */
+    padding: .5vw; /* Utiliza vw para hacer el relleno responsive */
+    margin-top: .5vw; /* Utiliza vw para hacer el margen responsive */
+    margin-bottom: 1vw; /* Utiliza vw para hacer el margen responsive */
+    border: none;
+    border-radius: 2vw; /* Utiliza vw para hacer el radio del borde responsive */
+    background-color: #f2f2f2; /* Gris claro para los campos de entrada */
+    color: #333333; /* Texto gris oscuro */
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1); /* Utiliza vw para hacer la sombra responsive */
+    transition: box-shadow 0.3s, border-radius 0.3s; /* Transiciones */
+}
+
+/* Efecto de foco */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 4vw 4vw rgba(0, 0, 0, 0.2); /* Utiliza vw para hacer la sombra responsive */
+}
+
+/* Estilo para el botón de enviar */
+input[type="submit"] {
+    background-color: #021730; /* Azul */
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 2vw; /* Utiliza vw para hacer el radio del borde responsive */
+}
+
+input[type="submit"]:hover {
+    background-color: #4169e1; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Estilo para el enlace de registro */
+a {
+    color: #09ccfd; /* Color verde */
+    text-decoration: none; /* Eliminar subrayado del enlace */
+    transition: color 0.3s; /* Transición de color */
+}
+
+/* Cambiar el color del enlace al pasar el cursor sobre él */
+a:hover {
+    color: #c532ff; /* Color rojo */
+}
+
+/* Estilo para los elementos h3 */
+h3 {
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: .2vw; /* Utiliza vw para hacer el margen responsive */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centrado horizontal */
+    padding: .2vw; /* Utiliza vw para hacer el relleno responsive */
+    background-color:#02173083 ; /* Fondo azul semi-transparente */
+    border-radius: 1vw; /* Utiliza vw para hacer el radio del borde responsive */
+    color: #ffffff; /* Texto blanco */
+    text-align: center; /* Alineación centrada */
+}
+
+/* Estilo específico para un h3 con clase "ok" */
+h3.ok {
+    background-color: #02173083; /* Fondo azul */
+}
+
+/* Estilo específico para un h3 con clase "bad" */
+h3.bad {
+    background-color: #02173083; 
+}
