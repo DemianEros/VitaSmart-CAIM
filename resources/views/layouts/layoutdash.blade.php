@@ -84,6 +84,7 @@
 				            <li class="dropdown-item"><a href="#"><i class="mdi mdi-settings mr-1"></i>Ajustes</a></li>
 				            <div class="dropdown-divider"></div>
 				            <li class="dropdown-item"><a href="#"><i class="mdi mdi-logout-variant mr-1"></i>Cerrar sesión</a></li>
+							
 				          </ul>
 				        </li>
                     </ul>-->
@@ -123,6 +124,9 @@
                     </ul>
                 </div>
             </nav>
+			<main>
+			@yield('content')
+			</main>
 	    </div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
