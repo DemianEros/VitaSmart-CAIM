@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="EstilosLayDash/icons/mdi/materialdesignicons.min.css">
 	<link rel="stylesheet" type="text/css" href="EstilosLayDash/css/style.css">
+	<link rel="icon" type="image/x-icon" href="EstilosWelcome/img/Icono.png" />
 </head>
 <body>
 	<div class="wrapper">
@@ -17,12 +18,14 @@
 	        </div>
 
 	        <ul class="list-unstyled components">
-	            <p>Dashboard</p>
+				<li>
+				<a href="{{ url('/home') }}">INICIO</a>
+				</li>
 	            <li>
-	                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">INICIO</a>
+	                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Modulo Citas</a>
 	                <ul class="collapse list-unstyled" id="homeSubmenu">
 	                    <li>
-	                        <a href="#">Generar Cita</a>
+	                        <a href="{{ route('appointments.index') }}">Generar Cita</a>
 	                    </li>
 	                    <li>
 	                        <a href="#">Eliminar Cita</a>
@@ -83,7 +86,11 @@
 				            <li class="dropdown-item"><a href="#"><i class="mdi mdi-account mr-1"></i>Mi perfil</a></li>
 				            <li class="dropdown-item"><a href="#"><i class="mdi mdi-settings mr-1"></i>Ajustes</a></li>
 				            <div class="dropdown-divider"></div>
-				            <li class="dropdown-item"><a href="#"><i class="mdi mdi-logout-variant mr-1"></i>Cerrar sesión</a></li>
+				            <li class="dropdown-item"><a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a></li>
 							
 				          </ul>
 				        </li>
@@ -104,21 +111,25 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a href="#" class="dropdown-toggle profile-navbar" data-toggle="dropdown" role="button" aria-expanded="false">
-				          	        {{ Auth::user()->name }}
-				                </a>
+								<a href="#" class="dropdown-toggle profile-navbar" data-toggle="dropdown" role="button" aria-expanded="false">
+				          			<img src="https://avatars1.githubusercontent.com/u/49246221?s=60&u=1c235446e9abad64a002c82ec494f93d290110ff&v=4" class="img-fluid rounded-circle shadow" width="40">
+				          			{{ Auth::user()->name }}
+				          		</a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+								  <ul class="dropdown-menu" role="menu">
+				            <li class="dropdown-item"><a href="#"><i class="mdi mdi-account mr-1"></i>Mi perfil</a></li>
+				            <li class="dropdown-item"><a href="#"><i class="mdi mdi-settings mr-1"></i>Ajustes</a></li>
+				            <div class="dropdown-divider"></div>
+				            <li class="dropdown-item"><a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
+                                    </a></li>
+							
+				          </ul>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </li>
                         @endguest
                     </ul>
@@ -132,6 +143,9 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	 <script type="text/javascript">
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
