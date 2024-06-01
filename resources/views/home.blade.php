@@ -11,7 +11,7 @@
 <body>
     <main>
         <div class="grid-container">
-            <a href="/ruta-citas" class="grid-item">
+            <a href="{{ route('appointments.index')}}" class="grid-item">
                 <img src="EstilosHome/imagenes/citas.png" alt="Módulo de Citas" class="img">
                 <h2>Módulo de Citas</h2>
             </a>
