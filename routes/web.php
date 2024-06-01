@@ -28,3 +28,7 @@ Route::get('/idyhome', [App\Http\Controllers\IDYHomeController::class, 'index'])
 Route::get('/pacientes', [App\Http\Controllers\PacientesController::class, 'index'])->name('pacientes');
 
 Route::resource('appointments', AppointmentController::class);
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->name('bitacora');
+Route::get('/reportes', [App\Http\Controllers\ReportesController::class, 'index'])->name('reportes');
+
