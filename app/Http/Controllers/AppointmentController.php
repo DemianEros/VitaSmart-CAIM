@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -34,9 +35,10 @@ class AppointmentController extends Controller
             'time' => 'required|date_format:H:i',
         ]);
 
-        Appointment::create($request->all());
+        $data = $request->only(['name', 'email', 'phone', 'date', 'time']);
+        Appointment::create($data);
 
-        return redirect()->route('appointments.index')->with('success', 'Cita creada correctamente.');
+        return redirect()->route('appointments.index')->with('success', 'Appointment created successfully.');
     }
 
     public function show(Appointment $appointment)
@@ -58,16 +60,19 @@ class AppointmentController extends Controller
             'date' => 'required|date',
             'time' => 'required|date_format:H:i',
         ]);
-
-        $appointment->update($request->all());
-
-        return redirect()->route('appointments.index')->with('success', 'Cita actualizada correctamente.');
+    
+        $data = $request->only(['name', 'email', 'phone', 'date', 'time']);
+        $appointment->update($data);
+    
+        return redirect()->route('appointments.index')->with('success', 'Appointment updated successfully.');
     }
+    
+
 
     public function destroy(Appointment $appointment)
     {
         $appointment->delete();
 
-        return redirect()->route('appointments.index')->with('success', 'Cita eliminada correctamente.');
+        return redirect()->route('appointments.index')->with('success', 'Appointment deleted successfully.');
     }
 }

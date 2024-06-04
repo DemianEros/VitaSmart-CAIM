@@ -1,6 +1,6 @@
 @extends('layouts.layoutdash')
 
-@section('content')
+@section('createsec')
     <div class="container">
         <h1>Crear Cita</h1>
 
