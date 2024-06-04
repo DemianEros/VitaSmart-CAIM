@@ -137,6 +137,7 @@
             </nav>
 			<main>
 			@yield('content')
+			@yield('createsec')
 			</main>
 	    </div>
 	</div>
