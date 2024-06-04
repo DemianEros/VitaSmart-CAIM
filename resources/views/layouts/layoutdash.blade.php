@@ -112,7 +112,7 @@
                         @else
                             <li class="nav-item dropdown">
 								<a href="#" class="dropdown-toggle profile-navbar" data-toggle="dropdown" role="button" aria-expanded="false">
-				          			<img src="https://avatars1.githubusercontent.com/u/49246221?s=60&u=1c235446e9abad64a002c82ec494f93d290110ff&v=4" class="img-fluid rounded-circle shadow" width="40">
+				          			<img src="https://icones.pro/wp-content/uploads/2021/02/symbole-masculin-icone-l-utilisateur-vert.png" class="img-fluid rounded-circle shadow" width="40">
 				          			{{ Auth::user()->name }}
 				          		</a>
 
@@ -137,6 +137,7 @@
             </nav>
 			<main>
 			@yield('content')
+			@yield('createsec')
 			</main>
 	    </div>
 	</div>
