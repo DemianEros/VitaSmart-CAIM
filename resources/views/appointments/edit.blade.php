@@ -1,6 +1,6 @@
 @extends('layouts.layoutdash')
 
-@section('edit')
+@section('content')
     <div class="container">
         <h1>Editar Cita</h1>
 
@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form action="{{ route('appointments.update', $appointment->id) }}" method="POST">
+        <form action="{{ route('appointments.update', ['id' => $appointment->id]) }}" method="POST">
             @csrf
             @method('PUT')
 
@@ -29,7 +29,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="phone" class="form-label">Telefono</label>
+                <label for="phone" class="form-label">Teléfono</label>
                 <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone', $appointment->phone) }}" required>
             </div>
 

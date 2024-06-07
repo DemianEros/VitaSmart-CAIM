@@ -37,8 +37,8 @@
                 },
                 eventClick: function(info) {
                     if (info.event.url) {
-                    window.location.href = info.event.url;
-                    info.jsEvent.preventDefault(); // don't let the browser navigate
+                        window.location.href = info.event.url;
+                        info.jsEvent.preventDefault(); // don't let the browser navigate
                     }
                 }
             });

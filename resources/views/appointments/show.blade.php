@@ -13,7 +13,7 @@
                     Fecha: {{ $appointment->date }}<br>
                     Horario: {{ $appointment->time }}
                 </p>
-                <a href="{{ route('appointments.edit', $appointment->id) }}" class="btn btn-primary">Editar</a>
+                <a href="{{ route('appointments.edit', ['id' => $appointment->id]) }}" class="btn btn-primary">Editar</a>
                 <form action="{{ route('appointments.destroy', $appointment->id) }}" method="POST" class="d-inline-block">
                     @csrf
                     @method('DELETE')
