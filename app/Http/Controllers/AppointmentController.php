@@ -13,7 +13,7 @@ class AppointmentController extends Controller
             return [
                 'title' => $appointment->name,
                 'start' => $appointment->date . 'T' . $appointment->time,
-                'url' => route('appointments.show', $appointment->id),
+                'url' => route('appointments.show', ['id' => $appointment->id]),
             ];
         });
 
@@ -38,21 +38,30 @@ class AppointmentController extends Controller
         $data = $request->only(['name', 'email', 'phone', 'date', 'time']);
         Appointment::create($data);
 
-        return redirect()->route('appointments.index')->with('success', 'Appointment created successfully.');
+        return redirect()->route('appointments.index')->with('success', 'La cita fue creada correctamente.');
     }
 
-    public function show(Appointment $appointment)
+    public function show(Request $request)
     {
+        $appointmentId = $request->query('id');
+        $appointment = Appointment::findOrFail($appointmentId);
+
         return view('appointments.show', compact('appointment'));
     }
 
-    public function edit(Appointment $appointment)
+    public function edit(Request $request)
     {
+        $appointmentId = $request->query('id');
+        $appointment = Appointment::findOrFail($appointmentId);
+
         return view('appointments.edit', compact('appointment'));
     }
 
-    public function update(Request $request, Appointment $appointment)
+    public function update(Request $request)
     {
+        $appointmentId = $request->query('id');
+        $appointment = Appointment::findOrFail($appointmentId);
+
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -60,19 +69,19 @@ class AppointmentController extends Controller
             'date' => 'required|date',
             'time' => 'required|date_format:H:i',
         ]);
-    
+
         $data = $request->only(['name', 'email', 'phone', 'date', 'time']);
         $appointment->update($data);
-    
-        return redirect()->route('appointments.index')->with('success', 'Appointment updated successfully.');
+
+        return redirect()->route('appointments.index')->with('success', 'La cita fue actualizada correctamente.');
     }
-    
 
-
-    public function destroy(Appointment $appointment)
+    public function destroy(Request $request)
     {
+        $appointmentId = $request->query('id');
+        $appointment = Appointment::findOrFail($appointmentId);
         $appointment->delete();
 
-        return redirect()->route('appointments.index')->with('success', 'Appointment deleted successfully.');
+        return redirect()->route('appointments.index')->with('success', 'La cita fue eliminada correctamente.');
     }
 }

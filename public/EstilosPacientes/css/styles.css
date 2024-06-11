@@ -1,0 +1,136 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff48; /* Verde claro */
+  color: #000000; /* Negro */
+  margin: 0; /* Eliminar margen */
+  padding: 0; /* Eliminar relleno */
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto; /* Centrar el contenedor */
+  padding: 7px; /* Agregar relleno */
+  box-sizing: border-box; /* Incluir el borde y el relleno en el ancho total */
+}
+
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+.input-container {
+  border: 1px solid #0c5b39; /* Borde negro */
+  padding: 15px; /* Relleno dentro del contenedor */
+  display: flex;
+  flex-direction: column; /* Colocar los elementos en una columna */
+  gap: 15px; /* Espacio entre los elementos */
+  width: 500px; /* Ajustar el ancho del contenedor */
+  margin: 0 auto; /* Centrar el contenedor horizontalmente */
+  gap: 10px;
+}
+
+.form-control {
+  padding: 8px;
+  font-size: 1rem; /* Tamaño de la fuente aumentado */
+  width: 100%; /* Ancho completo del input dentro del contenedor */
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column; /* Colocar los botones en una columna */
+  gap: 10px; /* Espacio entre los botones */ 
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 1rem; /* Tamaño de la fuente original */
+}
+
+/* Estilos para la tabla */
+.table {
+  width: fixed; /* Cambiado a auto para ajustar el ancho según el contenido */
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  table-layout: auto; /* Cambiado a auto para ajustar el ancho según el contenido */
+}
+
+/* Estilos para las celdas */
+.table th,
+.table td {
+  padding: 0.1rem;
+  vertical-align: top;
+  border-top: 1px solid #64e28a85; /* Blanco */
+  color: #000000; /* Negro */
+  overflow: hidden; /* Ocultar el contenido que excede el ancho de la celda */
+  text-overflow: ellipsis; /* Mostrar puntos suspensivos (...) para el contenido que se desborda */
+}
+
+/* Estilos para las celdas específicas */
+.td-exp {
+  max-width: 10px; /* Ancho máximo de la columna de EXP */
+}
+
+
+.table th,
+.table td {
+  padding: 0.3rem;
+  vertical-align: top;
+  border-top: 1px solid #64e28a85; /* Blanco */
+  color: #000000; /* Negro */
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ffffff; /* Blanco */
+  background-color: #0c5b39; /* Verde claro */
+  color: #ffffff; /* Blanco */
+  position: sticky; /* Hacer que el encabezado se fije */
+  top: 0; /* Fijar en la parte superior */
+  z-index: 2; /* Asegurar que esté por encima del contenido */
+}
+
+.table tbody tr:nth-of-type(odd) {
+  background-color: #abf7a1; /* Blanco */
+}
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: 15px;
+  }
+
+  .table td {
+    text-align: right;
+    padding-left: 50%;
+    text-align: left;
+    position: relative; /* Agregar un valor válido para la propiedad position */
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    width: auto; /* Ajustar el ancho automáticamente */
+  }
+
+  .input-list li {
+    margin-bottom: 10px;
+  }
+
+  .button-group {
+    margin-top: 10px;
+  }
+}

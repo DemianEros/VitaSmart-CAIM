@@ -1,6 +1,6 @@
 @extends('layouts.layoutdash')
 
-@section('createsec')
+@section('content')
     <div class="container">
         <h1>Crear Cita</h1>
 
@@ -32,7 +32,7 @@
                 <input type="time" class="form-control" id="time" name="time" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Crear cita</button>
+            <button type="submit" style="background-color: #74af7a; border-color: #34ff21; color:black" class="btn btn-primary">Crear cita</button>
         </form>
     </div>
 @endsection

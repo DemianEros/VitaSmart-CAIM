@@ -27,8 +27,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/idyhome', [App\Http\Controllers\IDYHomeController::class, 'index'])->name('idyhome');
 Route::get('/pacientes', [App\Http\Controllers\PacientesController::class, 'index'])->name('pacientes');
 
-Route::resource('appointments', AppointmentController::class);
+
+Route::get('appointments', [AppointmentController::class, 'index'])->name('appointments.index');
+Route::get('appointments/create', [AppointmentController::class, 'create'])->name('appointments.create');
+Route::post('appointments', [AppointmentController::class, 'store'])->name('appointments.store');
+Route::get('appointments/show', [AppointmentController::class, 'show'])->name('appointments.show');
+Route::get('appointments/edit', [AppointmentController::class, 'edit'])->name('appointments.edit');
+Route::put('appointments/update', [AppointmentController::class, 'update'])->name('appointments.update');
+Route::delete('appointments/destroy', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
+
+
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->name('bitacora');
 Route::get('/reportes', [App\Http\Controllers\ReportesController::class, 'index'])->name('reportes');
+Route::get('/search', [App\Http\Controllers\PacientesController::class, 'search'])->name('search');
 

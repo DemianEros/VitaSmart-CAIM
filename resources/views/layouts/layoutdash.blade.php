@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>VitaSmart</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="EstilosLayDash/icons/mdi/materialdesignicons.min.css">
-	<link rel="stylesheet" type="text/css" href="EstilosLayDash/css/style.css">
-	<link rel="icon" type="image/x-icon" href="EstilosWelcome/img/Icono.png" />
+	<link rel="stylesheet" type="text/css" href="../EstilosLayDash/icons/mdi/materialdesignicons.min.css">
+	<link rel="stylesheet" type="text/css" href="../EstilosLayDash/css/style.css">
+	<link rel="icon" type="image/x-icon" href="../EstilosWelcome/img/Icono.png" />
 </head>
 <body>
 	<div class="wrapper">
@@ -117,13 +117,13 @@
 				          		</a>
 
 								  <ul class="dropdown-menu" role="menu">
-				            <li class="dropdown-item"><a href="#"><i class="mdi mdi-account mr-1"></i>Mi perfil</a></li>
-				            <li class="dropdown-item"><a href="#"><i class="mdi mdi-settings mr-1"></i>Ajustes</a></li>
+				            <li style="padding-right: 10px;" class="dropdown-item"><a href="#"><i class="mdi mdi-account mr-1"></i>Mi perfil</a></li>
+				            <li style="padding-right: 10px;" class="dropdown-item"><a href="#"><i class="mdi mdi-settings mr-1"></i>Ajustes</a></li>
 				            <div class="dropdown-divider"></div>
-				            <li class="dropdown-item"><a class="dropdown-item" href="{{ route('logout') }}"
+				            <li style="padding-left: 0; padding-right: 0;" class="dropdown-item"><a style="padding-right: 10px;" class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Cerrar sesion') }}
                                     </a></li>
 							
 				          </ul>
@@ -138,6 +138,7 @@
 			<main>
 			@yield('content')
 			@yield('createsec')
+			@yield('edit')
 			</main>
 	    </div>
 	</div>
@@ -146,8 +147,9 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	 <script type="text/javascript">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
