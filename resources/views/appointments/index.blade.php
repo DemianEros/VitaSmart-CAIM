@@ -37,10 +37,11 @@
                 },
                 eventClick: function(info) {
                     if (info.event.url) {
-                        window.open(info.event.url, '_blank');
-                        info.jsEvent.preventDefault(); // don't let the browser navigate
+                    window.location.href = info.event.url;
+                    info.jsEvent.preventDefault(); 
                     }
-                }
+}
+
             });
 
             calendar.render();
