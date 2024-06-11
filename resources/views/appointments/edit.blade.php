@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Edit Appointment</h1>
+        <h1>Editar Cita</h1>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -14,12 +14,12 @@
             </div>
         @endif
 
-        <form action="{{ route('appointments.update', $appointment->id) }}" method="POST">
+        <form action="{{ route('appointments.update', ['id' => $appointment->id]) }}" method="POST">
             @csrf
             @method('PUT')
 
             <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
+                <label for="name" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $appointment->name) }}" required>
             </div>
 
@@ -29,21 +29,21 @@
             </div>
 
             <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
+                <label for="phone" class="form-label">Teléfono</label>
                 <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone', $appointment->phone) }}" required>
             </div>
 
             <div class="mb-3">
-                <label for="date" class="form-label">Date</label>
+                <label for="date" class="form-label">Fecha</label>
                 <input type="date" class="form-control" id="date" name="date" value="{{ old('date', $appointment->date) }}" required>
             </div>
 
             <div class="mb-3">
-                <label for="time" class="form-label">Time</label>
+                <label for="time" class="form-label">Horario</label>
                 <input type="time" class="form-control" id="time" name="time" value="{{ old('time', \Carbon\Carbon::parse($appointment->time)->format('H:i')) }}" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Update Appointment</button>
+            <button type="submit" style="background-color: #74af7a; border-color: #34ff21; color:black" class="btn btn-primary">Actualizar Cita</button>
         </form>
     </div>
 @endsection
