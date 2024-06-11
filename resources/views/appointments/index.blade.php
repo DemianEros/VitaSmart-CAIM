@@ -19,6 +19,24 @@
 
     <!-- FullCalendar JS -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/locales-all.min.js'></script> <!-- Include locale file -->
+
+    <style>
+        /* Cambiar el color de fondo y texto de los eventos */
+        .fc-event:hover {
+            background-color: #a4d6a0;
+            color: #4d4d4d;
+            border: 1px solid #0aa82f;
+        }
+        /* Cambio de color en el punto del evento*/
+        .fc-daygrid-event-dot{
+            border-color: #0aa82f;
+        }
+        .fc-day {
+            background-color: #e8efea;
+        }
+        
+    </style>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -26,6 +44,7 @@
 
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
+                locale: 'es', // Set the locale to Spanish
                 events: @json($appointments),
                 headerToolbar: {
                     left: 'prev,next today',

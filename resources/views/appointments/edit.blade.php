@@ -43,7 +43,7 @@
                 <input type="time" class="form-control" id="time" name="time" value="{{ old('time', \Carbon\Carbon::parse($appointment->time)->format('H:i')) }}" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Actualizar Cita</button>
+            <button type="submit" style="background-color: #74af7a; border-color: #34ff21; color:black" class="btn btn-primary">Actualizar Cita</button>
         </form>
     </div>
 @endsection
