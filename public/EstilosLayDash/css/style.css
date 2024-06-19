@@ -124,7 +124,7 @@ a, a:hover, a:focus {
 
 .dropdown-menu{
     border:none!important;
-    box-shadow: 4px 3px 12px 0px #e1e1e1!important;
+    box-shadow: 4px 3px 12px 0px #01ffaaa6!important;
 }
 
 @media (min-width: 992px){
