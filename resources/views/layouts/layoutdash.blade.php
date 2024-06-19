@@ -126,7 +126,7 @@
 
 								  <ul class="dropdown-menu" role="menu">
 				            <li style="padding-right: 10px;" class="dropdown-item"><a href="#"><i class="mdi mdi-account mr-1"></i>Mi perfil</a></li>
-				            <li style="padding-right: 10px;" class="dropdown-item"><a href="#"><i class="mdi mdi-settings mr-1"></i>Ajustes</a></li>
+				            <li class="dropdown-item"><a href="#" id="toggle-dark-mode"><i class="mdi mdi-theme-light-dark mr-1"></i>Modo Oscuro</a></li>
 				            <div class="dropdown-divider"></div>
 				            <li style="padding-left: 0; padding-right: 0;" class="dropdown-item"><a style="padding-right: 10px;" class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -150,6 +150,36 @@
 			</main>
 	    </div>
 	</div>
+	<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleDarkMode = document.getElementById('toggle-dark-mode');
+        const body = document.body;
+
+        // Función para alternar el modo oscuro
+        function toggleDarkModeFunc() {
+            body.classList.toggle('dark-mode');
+            
+            // Guardar preferencia del usuario en LocalStorage
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', null);
+            }
+        }
+
+        // Comprobar preferencia del usuario al cargar la página
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+
+        // Añadir evento de clic para el botón de modo oscuro
+        toggleDarkMode.addEventListener('click', function (e) {
+            e.preventDefault();
+            toggleDarkModeFunc();
+        });
+    });
+</script>
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
