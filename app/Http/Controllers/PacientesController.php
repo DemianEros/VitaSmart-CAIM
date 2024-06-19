@@ -32,7 +32,7 @@ class PacientesController extends Controller
             // Considera buscar tanto en la columna 'paterno' como en 'materno'
             $pacientesQuery->where(function($query) use ($searchApellido) {
                 $query->where('paterno', 'like', '%' . $searchApellido . '%')
-                      ->orWhere('materno', 'like', '%' . $searchApellido . '%');
+                    ->orWhere('materno', 'like', '%' . $searchApellido . '%');
             });
         }
         if (!empty($searchCurp)) {
@@ -42,11 +42,13 @@ class PacientesController extends Controller
             $pacientesQuery->where('exp', 'like', '%' . $searchExp . '%');
         }
     
+        // Ordenar los pacientes por fecha de ingreso en orden descendente
+        $pacientesQuery->orderBy('fecha_ing', 'desc');
+    
         // Obtener todos los pacientes que coincidan con los criterios de búsqueda
         $pacientes = $pacientesQuery->get();
     
         // Pasar los datos a la vista
         return view('pacientes', compact('pacientes'));
     }
-    
 }

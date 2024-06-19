@@ -21,42 +21,50 @@
 				<li>
 				<a href="{{ url('/home') }}">INICIO</a>
 				</li>
+					<li>
+	                    <a href="{{ route('appointments.index') }}">Generar Cita</a>
+					</li>
 	            <li>
-	                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Modulo Citas</a>
-	                <ul class="collapse list-unstyled" id="homeSubmenu">
+	                <a href="#PacienteSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pacientes</a>
+	                <ul class="collapse list-unstyled" id="PacienteSubmenu">
 	                    <li>
-	                        <a href="{{ route('appointments.index') }}">Generar Cita</a>
+	                        <a href="{{ route('pacientes')}}">Buscar paciente</a>
 	                    </li>
 	                    <li>
-	                        <a href="#">Eliminar Cita</a>
-	                    </li>
-	                    <li>
-	                        <a href="#">Calendario de Citas</a>
+	                        <a href="#">Ingresar nuevo paciente</a>
 	                    </li>
 	                </ul>
 	            </li>
 	            <li>
-	                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Folios Clinicos</a>
-	                <ul class="collapse list-unstyled" id="pageSubmenu">
+	                <a href="#AdminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administrador</a>
+	                <ul class="collapse list-unstyled" id="AdminSubmenu">
 	                    <li>
-	                        <a href="#">Crear Folio</a>
+	                        <a href="#">Visualizar usuarios</a>
 	                    </li>
 	                    <li>
-	                        <a href="#">Administracion de Folios</a>
+	                        <a href="#">Crear usuario</a>
 	                    </li>
 	                </ul>
 	            </li>
-	            <li>
-	                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Usuarios</a>
-	                <ul class="collapse list-unstyled" id="pageSubmenu">
+				<li>
+	                <a href="#BitacoraSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bitacora</a>
+	                <ul class="collapse list-unstyled" id="BitacoraSubmenu">
 	                    <li>
-	                        <a href="#">Crear Usuario</a>
+	                        <a href="#">Ver calendario</a>
 	                    </li>
 	                    <li>
-	                        <a href="#">Editar Usuario</a>
+	                        <a href="#">Buscar expediente</a>
+	                    </li>
+	                </ul>
+	            </li>
+				<li>
+	                <a href="#ReporteSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reportes</a>
+	                <ul class="collapse list-unstyled" id="ReporteSubmenu">
+	                    <li>
+	                        <a href="#">Repostes de citas</a>
 	                    </li>
 	                    <li>
-	                        <a href="#">Eliminar Usuario</a>
+	                        <a href="#">reportes de medicos</a>
 	                    </li>
 	                </ul>
 	            </li>
