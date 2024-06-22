@@ -1,5 +1,5 @@
 @extends('layouts.layoutdash')
-@section('content')
+@section('paciente')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +18,9 @@
 <body>
     <div class="container">
         <h1 class="mt-5">Lista de Pacientes</h1>
+        <div class="button-group mb-3">
+            <a href="{{ route('pacientes.create') }}" class="btn btn-success">Crear Paciente</a>
+        </div>
         <div class="scrollable-table">
             <table class="table table-bordered mt-3">
                 <thead>
@@ -57,7 +60,7 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>

@@ -26,7 +26,7 @@ Auth::routes(['verify' => true]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/idyhome', [App\Http\Controllers\IDYHomeController::class, 'index'])->name('idyhome');
 
-
+//estos son rutas para llas citas 
 Route::get('appointments', [AppointmentController::class, 'index'])->name('appointments.index');
 Route::get('appointments/create', [AppointmentController::class, 'create'])->name('appointments.create');
 Route::post('appointments', [AppointmentController::class, 'store'])->name('appointments.store');
@@ -35,7 +35,11 @@ Route::get('appointments/edit', [AppointmentController::class, 'edit'])->name('a
 Route::put('appointments/update', [AppointmentController::class, 'update'])->name('appointments.update');
 Route::delete('appointments/destroy', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
 
+//estas son rutas para acientes
 Route::get('/pacientes', [App\Http\Controllers\PacientesController::class, 'index'])->name('pacientes');
+Route::get('/pacientes/crear', [App\Http\Controllers\PacientesController::class, 'create'])->name('pacientes.create');
+Route::post('/pacientes', [App\Http\Controllers\PacientesController::class, 'store'])->name('pacientes.store');
+
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->name('bitacora');
 Route::get('/reportes', [App\Http\Controllers\ReportesController::class, 'index'])->name('reportes');

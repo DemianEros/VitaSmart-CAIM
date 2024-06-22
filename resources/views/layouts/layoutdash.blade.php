@@ -31,7 +31,7 @@
 	                        <a href="{{ route('pacientes')}}">Buscar paciente</a>
 	                    </li>
 	                    <li>
-	                        <a href="#">Ingresar nuevo paciente</a>
+	                        <a href="{{ route('pacientes.create') }}">Ingresar nuevo paciente</a>
 	                    </li>
 	                </ul>
 	            </li>
@@ -147,6 +147,7 @@
 			@yield('content')
 			@yield('createsec')
 			@yield('edit')
+			@yield('paciente')
 			</main>
 	    </div>
 	</div>
@@ -157,11 +158,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+            $('#sidebar').hasClass('active') ?
+                $('#sidebar').slideDown() :
+                $('#sidebar').slideUp();
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
