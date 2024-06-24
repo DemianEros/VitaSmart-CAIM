@@ -161,3 +161,12 @@ button {
 .button-group .btn-secondary:hover {
   background-color: #76eec6; /* Verde más oscuro al pasar el ratón */
 }
+
+.btn-editar {
+  background-color: #28a745; /* Color verde */
+  color: white; /* Texto en blanco */
+}
+
+.btn-editar:hover {
+  background-color: #218838; /* Color verde más oscuro al pasar el ratón */
+}

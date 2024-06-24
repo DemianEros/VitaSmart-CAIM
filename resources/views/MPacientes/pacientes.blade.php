@@ -10,8 +10,54 @@
     <style>
         /* Estilo para el div con scroll */
         .scrollable-table {
-            max-height: 400px; /* Altura máxima del div */
-            overflow-y: auto; /* Habilitar el scroll vertical */
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* Estilos para el cuadro de diálogo personalizado */
+        #customDialog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; /* Oculto por defecto */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Asegura que el diálogo esté sobre otros elementos */
+        }
+
+        .dialogBox {
+            background-color: #d4edda;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 400px; /* Añade un ancho máximo */
+            width: 100%; /* Asegura que no exceda el contenedor */
+        }
+
+        .dialogBox p {
+            margin: 0 0 20px;
+        }
+
+        .dialogBox button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dialogBox .confirmBtn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .dialogBox .cancelBtn {
+            background-color: #dc3545;
+            color: white;
         }
     </style>
 </head>
@@ -44,11 +90,11 @@
                             <td>{{ $paciente->fecha_ing }}</td>
                             <td>{{ $paciente->curp }}</td>
                             <td>
-                                <a href="{{ route('pacientes.edit', ['id' => $paciente->id]) }}" class="btn btn-primary btn-sm">Editar</a>
-                                <form action="{{ route('pacientes.destroy', ['id' => $paciente->id]) }}" method="POST" style="display:inline-block;">
+                                <a href="{{ route('pacientes.edit', ['id' => $paciente->id]) }}" class="btn btn-editar btn-sm">Editar</a>
+                                <form action="{{ route('pacientes.destroy', ['id' => $paciente->id]) }}" method="POST" class="deleteForm" style="display:inline-block;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este paciente?');">Eliminar</button>
+                                    <button type="button" class="btn btn-danger btn-sm deleteButton">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
@@ -69,6 +115,16 @@
             </div>
         </div>
     </div>
+
+    <!-- Cuadro de diálogo personalizado -->
+    <div id="customDialog">
+        <div class="dialogBox">
+            <p>¿Estás seguro de que deseas eliminar este paciente?</p>
+            <button class="confirmBtn" id="confirmDelete">Sí</button>
+            <button class="cancelBtn" id="cancelDelete">No</button>
+        </div>
+    </div>
+
     <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -78,17 +134,31 @@
             var searchApellido = document.getElementById('searchApellido').value;
             var searchCurp = document.getElementById('searchCurp').value;
             var searchExp = document.getElementById('searchExp').value;
-            // Redirigir a la misma página pero con la cadena de búsqueda como parámetro
             window.location.href = "{{ route('pacientes') }}?nombre=" + searchNombre + "&apellido=" + searchApellido + "&curp=" + searchCurp + "&exp=" + searchExp;
         });
 
         document.getElementById('clearButton').addEventListener('click', function() {
-            // Limpiar todos los campos de búsqueda y redirigir a la página sin la cadena de búsqueda
             document.getElementById('searchNombre').value = '';
             document.getElementById('searchApellido').value = '';
             document.getElementById('searchCurp').value = '';
             document.getElementById('searchExp').value = '';
             window.location.href = "{{ route('pacientes') }}";
+        });
+
+        document.querySelectorAll('.deleteButton').forEach(button => {
+            button.addEventListener('click', function() {
+                const form = this.closest('form');
+                const dialog = document.getElementById('customDialog');
+                dialog.style.display = 'flex';
+
+                document.getElementById('confirmDelete').onclick = function() {
+                    form.submit();
+                };
+
+                document.getElementById('cancelDelete').onclick = function() {
+                    dialog.style.display = 'none';
+                };
+            });
         });
     </script>
 </body>

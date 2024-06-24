@@ -8,6 +8,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('EstilosPacientes/css/crear.css') }}">
     <title>Crear Paciente</title>
+    <style>
+        /* Estilos para el cuadro de diálogo personalizado */
+        #customDialog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; /* Oculto por defecto */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .dialogBox {
+            background-color: #d4edda;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .dialogBox p {
+            margin: 0 0 20px;
+        }
+
+        .dialogBox button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dialogBox .confirmBtn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .dialogBox .cancelBtn {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -97,11 +144,26 @@
         </form>
     </div>
 
+    <!-- Cuadro de diálogo personalizado -->
+    <div id="customDialog">
+        <div class="dialogBox">
+            <p>¿Estás seguro de que deseas cancelar? Los datos no se guardarán.</p>
+            <button class="confirmBtn" id="confirmCancel">Sí</button>
+            <button class="cancelBtn" id="cancelDialog">No</button>
+        </div>
+    </div>
+
     <script>
         document.getElementById('cancelButton').addEventListener('click', function() {
-            if (confirm('¿Estás seguro de que deseas cancelar? Los datos no se guardarán.')) {
-                window.location.href = "{{ route('pacientes') }}";
-            }
+            document.getElementById('customDialog').style.display = 'flex';
+        });
+
+        document.getElementById('confirmCancel').addEventListener('click', function() {
+            window.location.href = "{{ route('pacientes') }}";
+        });
+
+        document.getElementById('cancelDialog').addEventListener('click', function() {
+            document.getElementById('customDialog').style.display = 'none';
         });
     </script>
 </body>

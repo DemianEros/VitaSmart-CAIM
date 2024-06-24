@@ -16,6 +16,7 @@
             left: 0;
             height: 100vh;
             overflow-y: auto;
+            transition: all 0.3s ease;
         }
         .navbar {
             position: fixed;
@@ -23,10 +24,12 @@
             right: 0;
             left: 250px; /* Ajustar según el ancho del sidebar */
             z-index: 1000;
+            transition: all 0.3s ease;
         }
         #content {
             margin-left: 250px; /* Ajustar según el ancho del sidebar */
             padding-top: 70px; /* Ajustar según la altura del navbar */
+            transition: all 0.3s ease;
         }
     </style>
 </head>
@@ -160,10 +163,18 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-                $('#sidebar').hasClass('active') ? $('#sidebar').slideDown() : $('#sidebar').slideUp();
-            });
-        });
+            $('#sidebar').toggleClass('active');
+            if ($('#sidebar').hasClass('active')) {
+                $('#sidebar').css('margin-left', '-250px');
+                $('.navbar').css('left', '0');
+                $('#content').css('margin-left', '0');
+            } else {
+                $('#sidebar').css('margin-left', '0');
+                $('.navbar').css('left', '250px');
+                $('#content').css('margin-left', '250px');
+            }
+    });
+});
     </script>
 </body>
 </html>
