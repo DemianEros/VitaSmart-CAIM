@@ -44,8 +44,10 @@ Route::put('/pacientes/actualizar', [App\Http\Controllers\PacientesController::c
 Route::delete('/pacientes/eliminar', [App\Http\Controllers\PacientesController::class, 'destroy'])->name('pacientes.destroy');
 
 
-
+//Estas son rutas para admin
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+
+
 Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->name('bitacora');
 Route::get('/reportes', [App\Http\Controllers\ReportesController::class, 'index'])->name('reportes');
 Route::get('/search', [App\Http\Controllers\PacientesController::class, 'search'])->name('search');

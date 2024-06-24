@@ -63,10 +63,19 @@
                     <a href="#AdminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administrador</a>
                     <ul class="collapse list-unstyled" id="AdminSubmenu">
                         <li>
-                            <a href="#">Visualizar usuarios</a>
+                            <a href="{{ route('admin') }}">Panel de admin</a>
                         </li>
                         <li>
-                            <a href="#">Crear usuario</a>
+                            <a href="#">Usuarios</a>
+                        </li>
+                        <li>
+                            <a href="#">Roles</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('appointments.index') }}">Citas</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('pacientes') }}">Pacientes</a>
                         </li>
                     </ul>
                 </li>

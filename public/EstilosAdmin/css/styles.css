@@ -1,0 +1,24 @@
+/* styles.css */
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+    background-color: #f0f9eb; /* Color de fondo verde claro */
+    border: 1px solid #c8e6c9; /* Borde verde más oscuro */
+    text-align: center;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #4CAF50; /* Color de texto verde */
+}
+
+p {
+    font-size: 1.2rem;
+    color: #4CAF50; /* Color de texto verde */
+    margin-bottom: 0;
+}
