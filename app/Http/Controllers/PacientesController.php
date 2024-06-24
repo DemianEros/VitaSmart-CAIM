@@ -86,5 +86,50 @@ class PacientesController extends Controller
         return redirect()->route('pacientes')->with('success', 'Paciente creado exitosamente.');
     }
 
+    public function edit(Request $request)
+{
+    $id = $request->query('id');
+    $paciente = Paciente::findOrFail($id);
+    return view('MPacientes.editpacientes', compact('paciente'));
+}
+
+public function update(Request $request)
+{
+    $id = $request->query('id');
+    $request->validate([
+        'js' => 'required|string|max:255',
+        'unidad' => 'required|string|max:255',
+        'exp' => 'required|string|max:255',
+        'curp' => 'required|string|max:255',
+        'fecha_ing' => 'required|date',
+        'paterno' => 'required|string|max:255',
+        'materno' => 'required|string|max:255',
+        'nombre' => 'required|string|max:255',
+        'sexo' => 'required|string|max:1',
+        'fecha_nac' => 'required|date',
+        'parent' => 'required|string|max:255',
+        'colonia' => 'required|string|max:255',
+        'calle' => 'required|string|max:255',
+        'numero' => 'required|string|max:255',
+        'telefono' => 'required|string|max:255',
+        'seg_pop' => 'required|string|max:255',
+        'vencimiento_sp' => 'required|date',
+        'gratuidad' => 'required|boolean',
+    ]);
+
+    $paciente = Paciente::findOrFail($id);
+    $paciente->update($request->all());
+
+    return redirect()->route('pacientes')->with('success', 'Paciente actualizado exitosamente.');
+}
+
+public function destroy(Request $request)
+{
+    $id = $request->query('id');
+    $paciente = Paciente::findOrFail($id);
+    $paciente->delete();
+
+    return redirect()->route('pacientes')->with('success', 'Paciente eliminado exitosamente.');
+}
 
 }

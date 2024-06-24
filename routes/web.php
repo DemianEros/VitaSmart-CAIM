@@ -35,10 +35,15 @@ Route::get('appointments/edit', [AppointmentController::class, 'edit'])->name('a
 Route::put('appointments/update', [AppointmentController::class, 'update'])->name('appointments.update');
 Route::delete('appointments/destroy', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
 
-//estas son rutas para acientes
+// Estas son rutas para pacientes
 Route::get('/pacientes', [App\Http\Controllers\PacientesController::class, 'index'])->name('pacientes');
 Route::get('/pacientes/crear', [App\Http\Controllers\PacientesController::class, 'create'])->name('pacientes.create');
 Route::post('/pacientes', [App\Http\Controllers\PacientesController::class, 'store'])->name('pacientes.store');
+Route::get('/pacientes/editar', [App\Http\Controllers\PacientesController::class, 'edit'])->name('pacientes.edit');
+Route::put('/pacientes/actualizar', [App\Http\Controllers\PacientesController::class, 'update'])->name('pacientes.update');
+Route::delete('/pacientes/eliminar', [App\Http\Controllers\PacientesController::class, 'destroy'])->name('pacientes.destroy');
+
+
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->name('bitacora');

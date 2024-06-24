@@ -31,6 +31,7 @@
                         <th>EXP</th>
                         <th>Fecha de Ingreso</th>
                         <th>CURP</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody id="table-body">
@@ -42,6 +43,14 @@
                             <td>{{ $paciente->exp }}</td>
                             <td>{{ $paciente->fecha_ing }}</td>
                             <td>{{ $paciente->curp }}</td>
+                            <td>
+                                <a href="{{ route('pacientes.edit', ['id' => $paciente->id]) }}" class="btn btn-primary btn-sm">Editar</a>
+                                <form action="{{ route('pacientes.destroy', ['id' => $paciente->id]) }}" method="POST" style="display:inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este paciente?');">Eliminar</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
