@@ -41,7 +41,7 @@ Route::get('/pacientes/crear', [App\Http\Controllers\PacientesController::class,
 Route::post('/pacientes', [App\Http\Controllers\PacientesController::class, 'store'])->name('pacientes.store');
 Route::get('/pacientes/editar', [App\Http\Controllers\PacientesController::class, 'edit'])->name('pacientes.edit');
 Route::put('/pacientes/actualizar', [App\Http\Controllers\PacientesController::class, 'update'])->name('pacientes.update');
-Route::delete('/pacientes/eliminar', [App\Http\Controllers\PacientesController::class, 'destroy'])->name('pacientes.destroy');
+Route::delete('/pacientes/eliminar/{id}', [App\Http\Controllers\PacientesController::class, 'destroy'])->name('pacientes.destroy');
 
 
 //Estas son rutas para admin

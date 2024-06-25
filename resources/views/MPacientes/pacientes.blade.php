@@ -94,7 +94,7 @@
                                 <form action="{{ route('pacientes.destroy', ['id' => $paciente->id]) }}" method="POST" class="deleteForm" style="display:inline-block;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" class="btn btn-danger btn-sm deleteButton">Eliminar</button>
+                                    <button type="button" class="btn btn-danger btn-sm deleteButton" data-id="{{ $paciente->id }}">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
@@ -113,6 +113,13 @@
                 <button class="btn btn-primary" type="button" id="searchButton">Buscar</button>
                 <button class="btn btn-secondary" type="button" id="clearButton">Limpiar</button>
             </div>
+        </div>
+    </div>
+    <div id="customDialog">
+        <div class="dialogBox">
+            <p>¿Estás seguro de que deseas eliminar este paciente?</p>
+            <button id="confirmDelete" class="confirmBtn">Eliminar</button>
+            <button id="cancelDelete" class="cancelBtn">Cancelar</button>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -140,6 +147,8 @@
                 const form = this.closest('form');
                 const dialog = document.getElementById('customDialog');
                 dialog.style.display = 'flex';
+
+                const id = this.getAttribute('data-id');
 
                 document.getElementById('confirmDelete').onclick = function() {
                     form.submit();
