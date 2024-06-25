@@ -7,6 +7,18 @@ use App\Models\Appointment;
 
 class AppointmentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+
     public function index()
     {
         $appointments = Appointment::all()->map(function($appointment) {

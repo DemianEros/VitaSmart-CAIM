@@ -10996,4 +10996,5 @@ video.bg-video {
 
 .icon-link:hover .link-text {
   opacity: 1;
+  color: #000;
 }
