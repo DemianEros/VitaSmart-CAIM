@@ -22,8 +22,42 @@
     <link rel="stylesheet" href="EstilosLayout/css/styles.css">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #app {
+            position: relative;
+            z-index: 1;
+        }
+
+        nav, footer {
+            position: relative;
+            z-index: 2;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
+<video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="EstilosWelcome/mp4/bg6.mp4" type="video/mp4" /></video>
     <div id="app">
         <nav style="background-color: #0c5b39;" class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">

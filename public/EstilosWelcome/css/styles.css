@@ -4207,7 +4207,9 @@ textarea.form-control-lg {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
+  background-color: rgba(0, 185, 0, 0.5); /* Color verde con 50% de transparencia */
 }
+
 
 .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
@@ -10994,4 +10996,5 @@ video.bg-video {
 
 .icon-link:hover .link-text {
   opacity: 1;
+  color: #000;
 }

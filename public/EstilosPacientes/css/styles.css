@@ -26,7 +26,6 @@ body {
   gap: 15px; /* Espacio entre los elementos */
   width: 500px; /* Ajustar el ancho del contenedor */
   margin: 0 auto; /* Centrar el contenedor horizontalmente */
-  gap: 10px;
 }
 
 .form-control {
@@ -37,13 +36,13 @@ body {
 
 .button-group {
   display: flex;
-  flex-direction: column; /* Colocar los botones en una columna */
-  gap: 10px; /* Espacio entre los botones */ 
+  justify-content: center; /* Centrar los botones horizontalmente */
+  gap: 10px; /* Espacio entre los botones */
 }
 
 button {
-  padding: 10px 15px;
-  font-size: 1rem; /* Tamaño de la fuente original */
+  padding: 5px 10px; /* Reducir el padding para hacer los botones más pequeños */
+  font-size: 0.8rem; /* Reducir el tamaño de fuente */
 }
 
 /* Estilos para la tabla */
@@ -71,7 +70,6 @@ button {
   max-width: 10px; /* Ancho máximo de la columna de EXP */
 }
 
-
 .table th,
 .table td {
   padding: 0.3rem;
@@ -93,7 +91,6 @@ button {
 .table tbody tr:nth-of-type(odd) {
   background-color: #abf7a1; /* Blanco */
 }
-
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
@@ -133,4 +130,43 @@ button {
   .button-group {
     margin-top: 10px;
   }
+}
+
+/* Estilos para los botones de búsqueda y limpieza */
+.button-group .btn {
+  border-radius: 20px; /* Hacer los botones más ovalados */
+  padding: 5px 10px; /* Reducir el padding para hacer los botones más pequeños */
+  font-size: 12px; /* Reducir el tamaño de fuente */
+  transition: background-color 0.3s ease; /* Animación suave para los cambios de color */
+}
+
+/* Estilo para el botón de búsqueda */
+.button-group .btn-primary {
+  background-color: #90ee90; /* Verde claro */
+  border: none; /* Sin borde */
+  color: rgb(0, 0, 0); /* Texto blanco */
+}
+
+.button-group .btn-primary:hover {
+  background-color: #76eec6; /* Verde más oscuro al pasar el ratón */
+}
+
+/* Estilo para el botón de limpiar */
+.button-group .btn-secondary {
+  background-color: #90ee90; /* Verde claro */
+  border: none; /* Sin borde */
+  color: rgb(0, 0, 0); /* Texto blanco */
+}
+
+.button-group .btn-secondary:hover {
+  background-color: #76eec6; /* Verde más oscuro al pasar el ratón */
+}
+
+.btn-editar {
+  background-color: #28a745; /* Color verde */
+  color: white; /* Texto en blanco */
+}
+
+.btn-editar:hover {
+  background-color: #218838; /* Color verde más oscuro al pasar el ratón */
 }
