@@ -146,3 +146,33 @@ a, a:hover, a:focus {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
+/* Estilos para el cuerpo y la barra de navegación en modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.navbar.dark-mode {
+    background-color: #333333;
+}
+
+/* Estilos para los enlaces dentro del menú de navegación */
+.navbar.dark-mode .nav-link {
+    color: #ffffff;
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu.dark-mode {
+    background-color: #333333;
+}
+
+/* Estilos para los ítems del menú desplegable */
+.dropdown-menu.dark-mode .dropdown-item {
+    color: #ffffff;
+}
+
+/* Estilo para el enlace del modo oscuro */
+.navbar.dark-mode #toggle-dark-mode {
+    color: #ffffff;
+}
