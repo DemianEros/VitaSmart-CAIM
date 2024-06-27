@@ -146,7 +146,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li style="padding-right: 10px;" class="dropdown-item"><a href="#"><i class="mdi mdi-account mr-1"></i>Mi perfil</a></li>
+                            <li style="padding-right: 10px;" class="dropdown-item"><i class="mdi mdi-account mr-1"></i>{{ Auth::user()->email}}</li>
                             <li style="padding-right: 10px;" class="dropdown-item"><a href="#"><i class="mdi mdi-settings mr-1"></i>Ajustes</a></li>
                             <div class="dropdown-divider"></div>
                             <li style="padding-left: 0; padding-right: 0;" class="dropdown-item"><a style="padding-right: 10px;" class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

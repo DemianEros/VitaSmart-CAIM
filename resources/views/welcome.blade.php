@@ -28,12 +28,12 @@
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                     @auth
-                        <a href="{{ url('/home') }}" class="btn btn-primary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
+                        <a href="{{ url('/home') }}" class="btn btn-primary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-500">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="btn btn-primary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Inicia Sesion</a>
+                        <a href="{{ route('login') }}" class="btn btn-primary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-500">Inicia Sesion</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-primary ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Registrate</a>
+                            <a href="{{ route('register') }}" class="btn btn-primary ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-500">Registrate</a>
                         @endif
                     @endauth
                 </div>
@@ -52,12 +52,12 @@
                     <div class="row input-group-newsletter">
                         <div class="col-auto">
                             @auth
-                                <a href="{{ url('/home') }}" class="btn btn-primary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
+                                <a href="{{ url('/home') }}" class="btn btn-primary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-500">Home</a>
                             @else
-                                <a href="{{ route('login') }}" class="btn btn-primary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Inicia Sesion</a>
+                                <a href="{{ route('login') }}" class="btn btn-primary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-500">Inicia Sesion</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn btn-primary ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Registrate</a>
+                                <a href="{{ route('register') }}" class="btn btn-primary ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-500">Registrate</a>
                             @endif
                             @endauth
                         </div>
@@ -71,8 +71,8 @@
             <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
                 <!-- <a class="btn btn-dark m-3" href="#!">-->
                 <a href="{{ url('/idyhome') }}" target="_blank" class="btn btn-dark m-3 icon-link"><img src="IconoIDY.ico" alt="Ícono Personalizado"><span class="link-text">Conocenos</span></a>
-                <a href="#" class="btn btn-dark m-3 icon-link"><i class="fas fa-comments"></i><span class="link-text">Contactanos</span></a>
-                <a href="#" class="btn btn-dark m-3 icon-link"><i class="fas fa-file-pdf"></i><span class="link-text">Manual de Usuario</span></a>
+                <a href="{{ url('/contacto') }}" target="_blank" class="btn btn-dark m-3 icon-link"><i class="fas fa-comments"></i><span class="link-text">Contactanos</span></a>
+                <a href="../EstilosWelcome/Documento/Manualdeusuario.pdf" download="Manualdeusuario.pdf" class="btn btn-dark m-3 icon-link"><i class="fas fa-file-pdf"></i><span class="link-text">Manual de Usuario</span></a>
             </div>
         </div>
         <!-- Bootstrap core JS-->

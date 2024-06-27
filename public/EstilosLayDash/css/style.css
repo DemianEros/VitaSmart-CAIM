@@ -176,3 +176,9 @@ body.dark-mode {
 .navbar.dark-mode #toggle-dark-mode {
     color: #ffffff;
 }
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #289b41;
+  }

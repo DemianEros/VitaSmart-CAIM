@@ -123,8 +123,8 @@
     <div style="margin-left: 20px;">
         <nav>
             <ul style="list-style: none; margin: 0; padding: 0;">
-                <li style="display: inline; margin-right: 10px;"><a class="ccl" style="color: #fff; text-decoration: none; padding: 8px 15px;" href="#">CONOCENOS</a></li>
-                <li style="display: inline; margin-right: 0px;"><a class="ccl" style="color: #fff; text-decoration: none; padding: 8px 15px;" href="#">CONTACTANOS</a></li>
+                <li style="display: inline; margin-right: 10px;"><a class="ccl" style="color: #fff; text-decoration: none; padding: 8px 15px;" href="{{ route ('idyhome')}}" target="_blank">CONOCENOS</a></li>
+                <li style="display: inline; margin-right: 0px;"><a class="ccl" style="color: #fff; text-decoration: none; padding: 8px 15px;" href="{{ route ('contacto')}}" target="_blank">CONTACTANOS</a></li>
             </ul>
         </nav>
     </div>

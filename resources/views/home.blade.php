@@ -32,7 +32,7 @@
                 <img src="EstilosHome/imagenes/reportes.png" alt="Módulo de Reportes" class="img">
                 <h2>Módulo de Reportes</h2>
             </a>
-            <a href="#" class="grid-item">
+            <a href="{{ url('/contacto') }}" target="_blank" class="grid-item">
                 <img src="EstilosHome/imagenes/conocenos.png" alt="Conócenos" class="img">
                 <h2>Conócenos</h2>
             </a>

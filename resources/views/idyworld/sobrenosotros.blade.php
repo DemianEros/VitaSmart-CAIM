@@ -46,7 +46,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="../EstilosIDY/images/logo.png" alt="#" /></a>
+                              <a href="{{ route ('idyhome')}}"><img src="../EstilosIDY/images/logo.png" alt="#" /></a>
                            </div>
                         </div>
                      </div>
