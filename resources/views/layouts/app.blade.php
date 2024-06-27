@@ -57,7 +57,7 @@
     </style>
 </head>
 <body>
-<video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="EstilosWelcome/mp4/bg6.mp4" type="video/mp4" /></video>
+<video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="EstilosWelcome/mp4/bg8.mp4" type="video/mp4" /></video>
     <div id="app">
         <nav style="background-color: #0c5b39;" class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">

@@ -40,7 +40,7 @@
             @endif
 
         <!-- Background Video-->
-        <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="EstilosWelcome/mp4/bg6.mp4" type="video/mp4" /></video>
+        <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="EstilosWelcome/mp4/bg8.mp4" type="video/mp4" /></video>
         <!-- Masthead-->
         <div class="masthead">
             <div class="masthead-content text-white">
