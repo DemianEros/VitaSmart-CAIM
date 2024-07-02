@@ -33,6 +33,31 @@
             </div>
 
             <button type="submit" style="background-color: #74af7a; border-color: #34ff21; color:black" class="btn btn-primary">Crear cita</button>
+            <button type="button" class="btn btn-secondary" id="cancelButton">Cancelar</button>
         </form>
+
+        <!-- Cuadro de diálogo personalizado -->
+    <div id="customDialog">
+        <div class="dialogBox">
+            <p>¿Estás seguro de que deseas cancelar? Los datos no se guardarán.</p>
+            <button class="confirmBtn" id="confirmCancel">Sí</button>
+            <button class="cancelBtn" id="cancelDialog">No</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('cancelButton').addEventListener('click', function() {
+            document.getElementById('customDialog').style.display = 'flex';
+        });
+
+        document.getElementById('confirmCancel').addEventListener('click', function() {
+            window.location.href = "{{ route('pacientes') }}";
+        });
+
+        document.getElementById('cancelDialog').addEventListener('click', function() {
+            document.getElementById('customDialog').style.display = 'none';
+        });
+    </script>
+
     </div>
 @endsection

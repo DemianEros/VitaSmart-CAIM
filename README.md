@@ -1,25 +1,31 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## About Vita smart
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+proyecto en Laravel y te proporcionaré las instrucciones necesarias. Aquí tienes los pasos:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Clonar el repositorio:
+Abre la línea de comandos y navega hasta la carpeta donde deseas clonar el repositorio.
+Ejecuta el siguiente comando para clonar el repositorio:
+git clone https://github.com/DemianEros/VitaSmart-CAIM.git
+
+Configurar el archivo .env:
+En la carpeta de tu proyecto, encontrarás un archivo llamado .env.example. Crea una copia de este archivo y nómbralo .env.
+Abre el archivo .env con un editor de texto y configura las variables de entorno según tus necesidades. Por ejemplo, establece la conexión a la base de datos y la clave de aplicación.
+Montar XAMPP:
+Si aún no tienes XAMPP instalado, descárgalo e instálalo en tu sistema.
+Abre XAMPP y asegúrate de que los servicios de Apache y MySQL estén activos.
+Visita http://localhost en tu navegador para verificar que XAMPP esté funcionando correctamente.
+Subir las dependencias de npm:
+Si tu proyecto utiliza recursos de frontend (como CSS, JavaScript o imágenes), puedes usar npm para gestionar las dependencias.
+Abre la línea de comandos en la carpeta de tu proyecto y ejecuta npm install para instalar las dependencias definidas en package.json.
+Realizar las migraciones de la base de datos:
+Laravel utiliza migraciones para crear y modificar la estructura de la base de datos.
+Ejecuta php artisan migrate para aplicar las migraciones y crear las tablas necesarias en la base de datos.
+Mensaje de bienvenida para el proyecto Vita Smart:
+En el README, puedes agregar una breve descripción del proyecto Vita Smart, su propósito y cualquier otra información relevante.
 
 ## Learning Laravel
 

@@ -24,7 +24,13 @@ Auth::routes();
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Rutas para IDY World
 Route::get('/idyhome', [App\Http\Controllers\IDYHomeController::class, 'index'])->name('idyhome');
+Route::get('/sobrenosotros', [App\Http\Controllers\IDYHomeController::class, 'showsn'])->name('sobrenosotros');
+Route::get('/equipo', [App\Http\Controllers\IDYHomeController::class, 'showeq'])->name('equipo');
+Route::get('/contacto', [App\Http\Controllers\IDYHomeController::class, 'showcon'])->name('contacto');
+Route::get('/carreras', [App\Http\Controllers\IDYHomeController::class, 'showcarr'])->name('carreras');
 
 //estos son rutas para llas citas 
 Route::get('appointments', [AppointmentController::class, 'index'])->name('appointments.index');
