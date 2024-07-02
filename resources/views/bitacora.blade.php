@@ -9,6 +9,9 @@
 </head>
 <body>
     <h1>Esta es a prueba de Bitacora</h1>
+    <p>me la pelas perro 
+        aqui tu le vas a mver 
+    </p>
 </body>
 </html>
 @endsection
