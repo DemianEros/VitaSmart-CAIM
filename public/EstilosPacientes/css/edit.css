@@ -1,0 +1,71 @@
+/* crear.css */
+
+body {
+    background-color: #e8f5e9; /* Verde claro */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #388e3c; /* Verde más oscuro */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    color: #2e7d32; /* Verde medio */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c8e6c9; /* Verde claro */
+    border-radius: 4px;
+    background-color: #f1f8e9; /* Verde muy claro */
+}
+
+.form-control:focus {
+    border-color: #81c784; /* Verde */
+    box-shadow: 0 0 8px rgba(129, 199, 132, 0.5);
+}
+
+.btn-primary {
+    background-color: #4caf50; /* Verde */
+    border-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #388e3c; /* Verde más oscuro */
+}
+
+.btn-secondary {
+    background-color: #c8e6c9; /* Verde claro */
+    border-color: #c8e6c9;
+    color: #2e7d32; /* Verde medio */
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #a5d6a7; /* Verde medio claro */
+}

@@ -32,6 +32,11 @@ a, a:hover, a:focus {
     background-color: #0c5b39;
     color: #fff;
     transition: all 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
 }
 #sidebar .sidebar-header {
     padding: 20px;
@@ -63,11 +68,11 @@ a, a:hover, a:focus {
     padding-left: 30px !important;
     background-color: #0c5b39;
 }
-#sidebar ul ul a:hover{
-    background-color: #74af7a!important;
-    border-bottom-left-radius: 0px!important;
-    border-top-left-radius: 0px!important;
-    margin-left: 0px!important;
+#sidebar ul ul a:hover {
+    background-color: #74af7a !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    margin-left: 0px !important;
     border-left: 5px solid #488e36;
 }
 #sidebar ul p {
@@ -104,38 +109,76 @@ a, a:hover, a:focus {
     padding: 35px;
     min-height: 100vh;
     transition: all 0.3s;
+    margin-left: 250px; /* Ajustar según el ancho del sidebar */
+    padding-top: 70px; /* Ajustar según la altura del navbar */
 }
 
-.dropdown-toggle::after { 
-    display: none; 
+.dropdown-toggle::after {
+    display: none;
 }
 
-.profile-navbar{
+.profile-navbar {
     padding: 10px;
-    border:2px solid #e1e1e1;
+    border: 2px solid #e1e1e1;
     border-radius: 30px;
     background: #74af7a;
 }
 
-.profile-navbar img{
+.profile-navbar img {
     margin-top: 5px;
     margin-bottom: 6px;
 }
 
-.dropdown-menu{
-    border:none!important;
-    box-shadow: 4px 3px 12px 0px #01ffaaa6!important;
+.dropdown-menu {
+    border: none !important;
+    box-shadow: 4px 3px 12px 0px #01ffaaa6 !important;
 }
 
-@media (min-width: 992px){
-    .dropdown-menu{
-        left:auto!important;
+@media (min-width: 992px) {
+    .dropdown-menu {
+        left: auto !important;
     }
 }
 
-.ccInicio:hover{
-    /*background-color: #29e448;*/
+.ccInicio:hover {
+    /* background-color: #29e448; */
     background-color: rgba(0, 255, 85, 0.151);
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
+/* Estilos para el cuerpo y la barra de navegación en modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.navbar.dark-mode {
+    background-color: #333333;
+}
+
+/* Estilos para los enlaces dentro del menú de navegación */
+.navbar.dark-mode .nav-link {
+    color: #ffffff;
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu.dark-mode {
+    background-color: #333333;
+}
+
+/* Estilos para los ítems del menú desplegable */
+.dropdown-menu.dark-mode .dropdown-item {
+    color: #ffffff;
+}
+
+/* Estilo para el enlace del modo oscuro */
+.navbar.dark-mode #toggle-dark-mode {
+    color: #ffffff;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #289b41;
+  }
