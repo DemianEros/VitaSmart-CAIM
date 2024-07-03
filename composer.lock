@@ -1052,6 +1052,7 @@
         },
         {
             "name": "laravel/framework",
+
             "version": "v10.48.14",
             "source": {
                 "type": "git",
@@ -1062,6 +1063,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/27cb4736bb7e60a5311ec73160068dfbcf98336b",
                 "reference": "27cb4736bb7e60a5311ec73160068dfbcf98336b",
+
                 "shasum": ""
             },
             "require": {
@@ -1255,6 +1257,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+
             "time": "2024-06-21T10:06:42+00:00"
         },
         {
@@ -1269,6 +1272,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/prompts/zipball/409b0b4305273472f3754826e68f4edbd0150149",
                 "reference": "409b0b4305273472f3754826e68f4edbd0150149",
+     
                 "shasum": ""
             },
             "require": {
@@ -1311,9 +1315,11 @@
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.1.24"
+
+                "source": "https://github.com/laravel/prompts/tree/v0.1.23"
             },
-            "time": "2024-06-17T13:58:22+00:00"
+            "time": "2024-05-27T13:53:20+00:00"
+
         },
         {
             "name": "laravel/sanctum",
@@ -5928,6 +5934,7 @@
         },
         {
             "name": "laravel/pint",
+
             "version": "v1.16.1",
             "source": {
                 "type": "git",
@@ -5938,6 +5945,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/pint/zipball/9266a47f1b9231b83e0cfd849009547329d871b1",
                 "reference": "9266a47f1b9231b83e0cfd849009547329d871b1",
+
                 "shasum": ""
             },
             "require": {
@@ -5948,6 +5956,7 @@
                 "php": "^8.1.0"
             },
             "require-dev": {
+
                 "friendsofphp/php-cs-fixer": "^3.59.3",
                 "illuminate/view": "^10.48.12",
                 "larastan/larastan": "^2.9.7",
@@ -5955,6 +5964,7 @@
                 "mockery/mockery": "^1.6.12",
                 "nunomaduro/termwind": "^1.15.1",
                 "pestphp/pest": "^2.34.8"
+
             },
             "bin": [
                 "builds/pint"
@@ -5990,6 +6000,7 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
+
             "time": "2024-06-18T16:50:05+00:00"
         },
         {
@@ -6004,6 +6015,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sail/zipball/e35b3ffe1b9ea598246d7e99197ee8799f6dc2e5",
                 "reference": "e35b3ffe1b9ea598246d7e99197ee8799f6dc2e5",
+
                 "shasum": ""
             },
             "require": {
@@ -6053,7 +6065,9 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
+
             "time": "2024-06-12T16:24:41+00:00"
+
         },
         {
             "name": "mockery/mockery",
@@ -6735,6 +6749,7 @@
         },
         {
             "name": "phpunit/phpunit",
+
             "version": "10.5.24",
             "source": {
                 "type": "git",
@@ -6745,6 +6760,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5f124e3e3e561006047b532fd0431bf5bb6b9015",
                 "reference": "5f124e3e3e561006047b532fd0431bf5bb6b9015",
+
                 "shasum": ""
             },
             "require": {
@@ -6816,7 +6832,9 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
+
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.24"
+
             },
             "funding": [
                 {
@@ -6832,7 +6850,9 @@
                     "type": "tidelift"
                 }
             ],
+
             "time": "2024-06-20T13:09:54+00:00"
+
         },
         {
             "name": "sebastian/cli-parser",
@@ -7815,6 +7835,7 @@
         },
         {
             "name": "spatie/error-solutions",
+
             "version": "1.0.1",
             "source": {
                 "type": "git",
@@ -7825,6 +7846,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/spatie/error-solutions/zipball/d60d4d2ef4b7701c86134ded959667cac6215233",
                 "reference": "d60d4d2ef4b7701c86134ded959667cac6215233",
+
                 "shasum": ""
             },
             "require": {
@@ -7877,7 +7899,9 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/error-solutions/issues",
+
                 "source": "https://github.com/spatie/error-solutions/tree/1.0.1"
+
             },
             "funding": [
                 {
@@ -7885,6 +7909,7 @@
                     "type": "github"
                 }
             ],
+
             "time": "2024-06-21T10:09:00+00:00"
         },
         {
