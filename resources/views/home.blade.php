@@ -10,6 +10,7 @@
 </head>
 <body>
     <main>
+        
         <div class="grid-container">
             <a href="{{ route('appointments.index')}}" class="grid-item">
                 <img src="EstilosHome/imagenes/citas.png" alt="Módulo de Citas" class="img">
@@ -41,3 +42,4 @@
 </body>
 </html>
 @endsection
+
