@@ -10,6 +10,9 @@
 </head>
 <body>
     <main>
+
+        
+
         <div id="loader-wrapper">
             <span class="loader"></span>
         </div>
@@ -48,3 +51,4 @@
 </body>
 </html>
 @endsection
+
