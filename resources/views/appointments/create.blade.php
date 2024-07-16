@@ -1,5 +1,5 @@
 @extends('layouts.layoutdash')
-
+@can('appointments.create')
 @section('content')
     <div class="container">
         <h1>Crear Cita</h1>
@@ -61,3 +61,4 @@
 
     </div>
 @endsection
+@endcan

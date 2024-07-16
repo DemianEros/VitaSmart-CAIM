@@ -4,7 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbffd9103884600c14b6dfbea6ad62f9",
+
+    "content-hash": "3a21e1a4362166954b90ce15b5703abc",
+
     "packages": [
         {
             "name": "brick/math",
@@ -1945,6 +1947,50 @@
                 }
             ],
             "time": "2024-01-28T23:22:08+00:00"
+        },
+        {
+            "name": "mathewparet/laravel-permission-seeder",
+            "version": "v2.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/mathewparet/laravel-permission-seeder.git",
+                "reference": "82da3fd0546f4e94480166f31d287a4768dc382f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/mathewparet/laravel-permission-seeder/get/82da3fd0546f4e94480166f31d287a4768dc382f.zip",
+                "reference": "82da3fd0546f4e94480166f31d287a4768dc382f",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "mathewparet\\LaravelPermissionSeeder\\Providers\\PermissionSeederProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "mathewparet\\LaravelPermissionSeeder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mathew Paret",
+                    "email": "mathewparet@gmail.com"
+                }
+            ],
+            "description": "Permission Seeders for Spatie/Laravel-Permissions",
+            "homepage": "https://bitbucket.org/mathewparet/laravel-permission-seeder",
+            "support": {
+                "source": "https://bitbucket.org/mathewparet/laravel-permission-seeder/src/82da3fd0546f4e94480166f31d287a4768dc382f/?at=v2.0.7"
+            },
+            "time": "2023-12-15T14:05:44+00:00"
         },
         {
             "name": "monolog/monolog",

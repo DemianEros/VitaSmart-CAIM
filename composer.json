@@ -11,6 +11,9 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.4",
+
+        "mathewparet/laravel-permission-seeder": "^2.0",
+
         "spatie/laravel-permission": "^6.9"
     },
     "require-dev": {
