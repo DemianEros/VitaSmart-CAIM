@@ -8,7 +8,7 @@ use App\Models\User;
 
 return new class extends Migration
 {
-    /**
+    /**dxs
      * Run the migrations.
      */
     public function up(): void

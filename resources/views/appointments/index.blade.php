@@ -3,8 +3,9 @@
 @section('content')
     <div class="container">
         <h1>Calendario de Citas</h1>
+        @role('admin|empleado')
         <a href="{{ route('appointments.create') }}" style="background-color: #74af7a; border-color: #34ff21; color:black" class="btn btn-primary mb-3">Crear cita</a>
-
+        @endrole
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}

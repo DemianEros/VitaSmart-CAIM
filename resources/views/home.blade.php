@@ -10,9 +10,7 @@
 </head>
 <body>
     <main>
-
         
-
         <div id="loader-wrapper">
             <span class="loader"></span>
         </div>
@@ -27,18 +25,20 @@
                 <i class="fa-solid fa-calendar-days" style="color: #63E6BE;"></i>
                 <h2>Módulo de Pacientes</h2>
             </a>
+            @role('admin')
             <a href="{{ route('admin') }}" class="grid-item">
                 <img src="EstilosHome/imagenes/Admin.png" alt="Módulo de Administrador" class="img">
                 <h2>Módulo de Administrador</h2>
             </a>
+            @endrole
             <a href="{{ route('bitacora') }}" class="grid-item">
                 <img src="EstilosHome/imagenes/Bitacora.png" alt="Bitácora de Expedientes" class="img">
                 <h2>Bitácora de Expedientes</h2>
             </a>
-            <a href="{{ route('bitacora') }}" class="grid-item">
+        <!--<a href="{{ route('bitacora') }}" class="grid-item">
                 <img src="EstilosHome/imagenes/reportes.png" alt="Módulo de Reportes" class="img">
                 <h2>Módulo de Reportes</h2>
-            </a>
+            </a>-->
             <a href="{{ url('/contacto') }}" target="_blank" class="grid-item">
                 <img src="EstilosHome/imagenes/conocenos.png" alt="Conócenos" class="img">
                 <h2>Conócenos</h2>

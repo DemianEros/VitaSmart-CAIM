@@ -59,6 +59,7 @@
                         </li>
                     </ul>
                 </li>
+                @role('admin')
                 <li>
                     <a href="#AdminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administrador</a>
                     <ul class="collapse list-unstyled" id="AdminSubmenu">
@@ -79,6 +80,7 @@
                         </li>
                     </ul>
                 </li>
+                @endrole
                 <li>
                     <a href="#BitacoraSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bitacora</a>
                     <ul class="collapse list-unstyled" id="BitacoraSubmenu">
@@ -90,7 +92,7 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <!--<li>
                     <a href="#ReporteSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reportes</a>
                     <ul class="collapse list-unstyled" id="ReporteSubmenu">
                         <li>
@@ -100,9 +102,9 @@
                             <a href="#">Reportes de médicos</a>
                         </li>
                     </ul>
-                </li>
+                </li>-->
                 <li>
-                    <a href="#">Contacto</a>
+                    <a href="{{ url('/contacto') }}">Contacto</a>
                 </li>
             </ul>
         </nav>
