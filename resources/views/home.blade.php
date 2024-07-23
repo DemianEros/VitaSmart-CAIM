@@ -10,6 +10,11 @@
 </head>
 <body>
     <main>
+
+        <div id="loader-wrapper">
+            <span class="loader"></span>
+        </div>
+
         <div class="grid-container">
             <a href="{{ route('appointments.index')}}" class="grid-item">
                 <img src="EstilosHome/imagenes/citas.png" alt="Módulo de Citas" class="img">
@@ -38,6 +43,8 @@
             </a>
         </div>
     </main>
+    <script src="EstilosHome/script.js"></script>
+
 </body>
 </html>
 @endsection
