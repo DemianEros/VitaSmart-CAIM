@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vita Smart</title>
     <link rel="stylesheet" href="EstilosHome/css/styles.css">
+    <link rel="stylesheet" href="styleloader.css">
 </head>
 <body>
     <main>
@@ -43,7 +44,7 @@
             </a>
         </div>
     </main>
-    <script src="EstilosHome/script.js"></script>
+    <script src="scriptloader.js"></script>
 
 </body>
 </html>

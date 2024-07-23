@@ -7,6 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('loader-wrapper').style.display = 'none';
             // Mostrar el contenido
             document.getElementById('content').style.display = 'block';
-        }, 2000); // 2000 milisegundos = 2 segundos
+        }, 1500); // 2000 milisegundos = 2 segundos
     });
 });
