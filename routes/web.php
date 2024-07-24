@@ -52,7 +52,7 @@ Route::delete('/pacientes/eliminar/{id}', [App\Http\Controllers\PacientesControl
 
 //Estas son rutas para admin
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
-
+Route::get('/admin/users', [AdminController::class, 'listUsers'])->name('admin.users');
 
 Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->name('bitacora');
 Route::get('/reportes', [App\Http\Controllers\ReportesController::class, 'index'])->name('reportes');
