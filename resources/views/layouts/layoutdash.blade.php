@@ -66,7 +66,7 @@
                             <a href="{{ route('admin') }}">Panel de admin</a>
                         </li>
                         <li>
-                            <a href="{{ route('users') }}">Usuarios</a>
+                            <a href="{{ route('admin.users') }}">Usuarios</a>
                         </li>
                         <li>
                             <a href="#">Roles</a>

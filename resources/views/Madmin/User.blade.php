@@ -1,3 +1,5 @@
+@extends('layouts.layoutdash')
+
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 @section('content')
@@ -16,5 +18,6 @@
 
 {{-- javascript custom add directory per module --}}
 @push('scripts')
-    <script src="{{ asset('js/positions/index.js') }}"></script>
+    <script src="{{ asset('EstilosAdmin/js/scripts.js') }}"></script>
 @endpush
+
