@@ -33,6 +33,7 @@ Route::get('/equipo', [App\Http\Controllers\IDYHomeController::class, 'showeq'])
 Route::get('/contacto', [App\Http\Controllers\IDYHomeController::class, 'showcon'])->name('contacto');
 Route::get('/carreras', [App\Http\Controllers\IDYHomeController::class, 'showcarr'])->name('carreras');
 
+
 //estos son rutas para llas citas 
 Route::get('appointments', [AppointmentController::class, 'index'])->name('appointments.index');
 Route::get('appointments/create', [AppointmentController::class, 'create'])->name('appointments.create');
@@ -49,6 +50,7 @@ Route::post('/pacientes', [App\Http\Controllers\PacientesController::class, 'sto
 Route::get('/pacientes/editar', [App\Http\Controllers\PacientesController::class, 'edit'])->name('pacientes.edit');
 Route::put('/pacientes/actualizar', [App\Http\Controllers\PacientesController::class, 'update'])->name('pacientes.update');
 Route::delete('/pacientes/eliminar/{id}', [App\Http\Controllers\PacientesController::class, 'destroy'])->name('pacientes.destroy');
+
 
 
 //Estas son rutas para admin
