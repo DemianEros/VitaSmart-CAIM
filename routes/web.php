@@ -55,7 +55,7 @@ Route::delete('/pacientes/eliminar/{id}', [App\Http\Controllers\PacientesControl
 
 //Estas son rutas para admin
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
-Route::get('/admin/users', [AdminController::class, 'listUsers'])->name('admin.users');
+Route::get('/admin/users', [App\Http\Controllers\AdminController::class, 'listUsers'])->name('admin.users');
 
 Route::post('/users', [App\Http\Controllers\UserController::class, 'store'])->name('users.store');
 Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
