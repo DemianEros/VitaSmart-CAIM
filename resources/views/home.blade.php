@@ -7,9 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vita Smart</title>
     <link rel="stylesheet" href="EstilosHome/css/styles.css">
+    <link rel="stylesheet" href="styleloader.css">
 </head>
 <body>
     <main>
+
+        <div id="loader-wrapper">
+            <span class="loader"></span>
+        </div>
+
         <div class="grid-container">
             <a href="{{ route('appointments.index')}}" class="grid-item">
                 <img src="EstilosHome/imagenes/citas.png" alt="Módulo de Citas" class="img">
@@ -38,6 +44,8 @@
             </a>
         </div>
     </main>
+    <script src="scriptloader.js"></script>
+
 </body>
 </html>
 @endsection

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>VitaSmart</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../EstilosLayDash/icons/mdi/materialdesignicons.min.css">
     <link rel="stylesheet" type="text/css" href="../EstilosLayDash/css/style.css">
     <link rel="icon" type="image/x-icon" href="../EstilosWelcome/img/Icono.png" />
@@ -66,7 +67,7 @@
                             <a href="{{ route('admin') }}">Panel de admin</a>
                         </li>
                         <li>
-                            <a href="#">Usuarios</a>
+                            <a href="{{ route('admin.users') }}">Usuarios</a>
                         </li>
                         <li>
                             <a href="#">Roles</a>
@@ -185,5 +186,8 @@
     });
 });
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

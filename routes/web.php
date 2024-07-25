@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::get('/equipo', [App\Http\Controllers\IDYHomeController::class, 'showeq'])
 Route::get('/contacto', [App\Http\Controllers\IDYHomeController::class, 'showcon'])->name('contacto');
 Route::get('/carreras', [App\Http\Controllers\IDYHomeController::class, 'showcarr'])->name('carreras');
 
+
 //estos son rutas para llas citas 
 Route::get('appointments', [AppointmentController::class, 'index'])->name('appointments.index');
 Route::get('appointments/create', [AppointmentController::class, 'create'])->name('appointments.create');
@@ -50,8 +52,14 @@ Route::put('/pacientes/actualizar', [App\Http\Controllers\PacientesController::c
 Route::delete('/pacientes/eliminar/{id}', [App\Http\Controllers\PacientesController::class, 'destroy'])->name('pacientes.destroy');
 
 
+
 //Estas son rutas para admin
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+Route::get('/admin/users', [AdminController::class, 'listUsers'])->name('admin.users');
+
+Route::post('/users', [App\Http\Controllers\UserController::class, 'store'])->name('users.store');
+Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
+Route::delete('/users/{user}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');
 
 
 Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->name('bitacora');
