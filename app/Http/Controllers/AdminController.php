@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -70,5 +71,11 @@ class AdminController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         return redirect()->route('admin.users')->with('success', 'Usuario eliminado correctamente.');
+    }
+
+    public function listUsers()
+    {
+        $users = User::all();
+        return view('Madmin.User', compact('users'));
     }
 }

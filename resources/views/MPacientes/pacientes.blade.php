@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../EstilosPacientes/css/styles.css">
+    <link rel="stylesheet" href="styleloader.css">
     <title>Pacientes</title>
     <style>
         /* Estilo para el div con scroll */
@@ -62,6 +63,10 @@
     </style>
 </head>
 <body>
+        <div id="loader-wrapper">
+            <span class="loader"></span>
+        </div>
+
     <div class="container">
         <h1 class="mt-5">Lista de Pacientes</h1>
         <div class="button-group mb-3">
@@ -160,6 +165,7 @@
             });
         });
     </script>
+    <script src="scriptloader.js"></script>
 </body>
 </html>
 @endsection

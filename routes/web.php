@@ -52,14 +52,14 @@ Route::put('/pacientes/actualizar', [App\Http\Controllers\PacientesController::c
 Route::delete('/pacientes/eliminar/{id}', [App\Http\Controllers\PacientesController::class, 'destroy'])->name('pacientes.destroy');
 
 
-// Estas son rutas para admin
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+
+//Estas son rutas para admin
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/admin/users', [AdminController::class, 'listUsers'])->name('admin.users');
-Route::get('/admin/users/create', [AdminController::class, 'create'])->name('admin.users.create');
-Route::post('/admin/users', [AdminController::class, 'store'])->name('admin.users.store');
-Route::get('/admin/users/edit', [AdminController::class, 'edit'])->name('admin.users.edit'); // Uso de query string para ID
-Route::put('/admin/users/{id}', [AdminController::class, 'update'])->name('admin.users.update');
-Route::delete('/admin/users/{id}', [AdminController::class, 'destroy'])->name('admin.users.destroy');
+
+Route::post('/users', [App\Http\Controllers\UserController::class, 'store'])->name('users.store');
+Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
+Route::delete('/users/{user}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');
 
 
 Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->name('bitacora');

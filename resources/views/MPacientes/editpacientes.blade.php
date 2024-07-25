@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('EstilosPacientes/css/crear.css') }}">
+    <link rel="stylesheet" href="styleloader.css">
     <title>Editar Paciente</title>
     <style>
         /* Estilos para el cuadro de diálogo personalizado */
@@ -57,6 +58,10 @@
     </style>
 </head>
 <body>
+        <div id="loader-wrapper">
+            <span class="loader"></span>
+        </div>
+
     <div class="container">
         <h1 class="mt-5">Editar Paciente</h1>
         <form action="{{ route('pacientes.update', ['id' => $paciente->id]) }}" method="POST">
@@ -167,6 +172,7 @@
             document.getElementById('customDialog').style.display = 'none';
         });
     </script>
+    <script src="scriptloader.js"></script>
 </body>
 </html>
 @endsection
