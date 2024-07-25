@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
             ['email' => 'admin@example.com'],
             [
                 'name' => 'Admin User',
-                'password' => bcrypt('password'),
+                'password' => bcrypt('123456789'),
             ]
         );
 
@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             ['email' => 'administ@example.com'],
             [
                 'name' => 'Administrativo User',
-                'password' => bcrypt('password'),
+                'password' => bcrypt('123456789'),
             ]
         );
 
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
             ['email' => 'visor@example.com'],
             [
                 'name' => 'Visor User',
-                'password' => bcrypt('password'),
+                'password' => bcrypt('123456789'),
             ]
         );
     }
