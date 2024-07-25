@@ -4,37 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>README - Vita-Smart</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        h2 {
-            color: #555;
-        }
-        code {
-            background-color: #f4f4f4;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-        pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 <body>
     <h1>Bienvenido a Vita-Smart</h1>
@@ -68,20 +37,20 @@ DB_PASSWORD=
             <ul>
                 <li><strong>Admin:</strong>
                     <ul>
-                        <li>Email: <code>empleado@example.com</code></li>
-                        <li>Contraseña: <code>password123</code></li>
+                        <li>Email: <code>admin@example.com</code></li>
+                        <li>Contraseña: <code>123456789</code></li>
                     </ul>
                 </li>
                 <li><strong>Empleado:</strong>
                     <ul>
-                        <li>Email: <code>empleado@example.com</code></li>
-                        <li>Contraseña: <code>password123</code></li>
+                        <li>Email: <code>administ@example.com</code></li>
+                        <li>Contraseña: <code>123456789</code></li>
                     </ul>
                 </li>
                 <li><strong>Visor:</strong>
                     <ul>
                         <li>Email: <code>visor@example.com</code></li>
-                        <li>Contraseña: <code>password123</code></li>
+                        <li>Contraseña: <code>123456789</code></li>
                     </ul>
                 </li>
             </ul>
