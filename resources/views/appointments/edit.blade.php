@@ -72,8 +72,8 @@
                 ¿Estás seguro de que deseas cancelar la edición de la cita?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                <a href="{{ route('appointments.index') }}" class="btn btn-success">Confirmar Cancelación</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <a href="{{ route('appointments.index') }}" class="btn btn-danger">Confirmar</a>
             </div>
         </div>
     </div>
