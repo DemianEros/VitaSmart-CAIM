@@ -69,7 +69,7 @@ class AppointmentController extends Controller
         return view('appointments.edit', compact('appointment'));
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
         $appointmentId = $request->query('id');
         $appointment = Appointment::findOrFail($appointmentId);
@@ -84,7 +84,6 @@ class AppointmentController extends Controller
 
         $data = $request->only(['name', 'email', 'phone', 'date', 'time']);
         $appointment->update($data);
-        $user->update($request->all());
 
         return redirect()->route('appointments.index')->with('success', 'La cita fue actualizada correctamente.');
     }
