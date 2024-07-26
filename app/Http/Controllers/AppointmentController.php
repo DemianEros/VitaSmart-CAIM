@@ -43,7 +43,7 @@ class AppointmentController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
-            'date' => 'required|date',
+            'date' => 'required|date|after_or_equal:' . now()->toDateString(),
             'time' => 'required|date_format:H:i',
         ]);
 
@@ -78,7 +78,7 @@ class AppointmentController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
-            'date' => 'required|date',
+            'date' => 'required|date|after_or_equal:' . now()->toDateString(),
             'time' => 'required|date_format:H:i',
         ]);
 
