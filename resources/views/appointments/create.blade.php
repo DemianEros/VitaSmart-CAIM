@@ -45,7 +45,7 @@
             </div>
 
             <button type="submit" style="background-color: #74af7a; border-color: #34ff21; color:black" class="btn btn-primary">Crear cita</button>
-            <button type="button" class="btn btn-secondary" id="cancelButton">Cancelar</button>
+            <button type="button" class="btn btn-danger" id="cancelButton">Cancelar</button>
         </form>
 
     <script>

@@ -56,7 +56,29 @@
             </div>
 
             <button type="submit" style="background-color: #74af7a; border-color: #34ff21; color:black" class="btn btn-primary">Actualizar Cita</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cancelModal">Cancelar</button>
         </form>
+        <!-- Modal de Confirmación de Cancelación -->
+<div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="cancelModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cancelModalLabel">Confirmar Cancelación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas cancelar la edición de la cita?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <a href="{{ route('appointments.index') }}" class="btn btn-success">Confirmar Cancelación</a>
+            </div>
+        </div>
+    </div>
+</div>
+
     </div>
     <script src="scriptloader.js"></script>
  </body>

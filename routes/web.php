@@ -43,6 +43,10 @@ Route::get('appointments/edit', [AppointmentController::class, 'edit'])->name('a
 Route::put('appointments/update', [AppointmentController::class, 'update'])->name('appointments.update');
 Route::delete('appointments/destroy', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
 
+Route::get('/admin/users', [App\Http\Controllers\UserController::class, 'index'])->name('admin.users.index');
+Route::put('/admin/users/{user}', [App\Http\Controllers\UserController::class, 'update'])->name('admin.users.update');
+
+
 // Estas son rutas para pacientes
 Route::get('/pacientes', [App\Http\Controllers\PacientesController::class, 'index'])->name('pacientes');
 Route::get('/pacientes/crear', [App\Http\Controllers\PacientesController::class, 'create'])->name('pacientes.create');

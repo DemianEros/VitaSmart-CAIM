@@ -27,15 +27,6 @@
                 </div>
             </div>
         </div>
-        
-        <div class="col-md-6 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Roles</h5>
-                    <p class="card-text">Texto de ejemplo para roles.</p>
-                </div>
-            </div>
-        </div>
 
         <!-- Columna 2 -->
         <div class="col-md-6 mb-4">
