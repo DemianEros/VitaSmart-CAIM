@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Paciente;
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -22,9 +24,11 @@ class AdminController extends Controller
     public function index()
     {
         $totalUsers = User::count();
-        return view('Madmin.admin', compact('totalUsers'));
-    }
+        $totalPacientes = Paciente::count();
+        $totalCitas = Appointment::count();
 
+        return view('Madmin.admin', compact('totalUsers', 'totalPacientes', 'totalCitas'));
+    }
     public function listUsers()
     {
         $users = User::all();
