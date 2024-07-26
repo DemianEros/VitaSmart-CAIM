@@ -77,13 +77,6 @@
                         <li><a href="#">Buscar expediente</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#ReporteSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reportes</a>
-                    <ul class="collapse list-unstyled" id="ReporteSubmenu">
-                        <li><a href="#">Reportes de citas</a></li>
-                        <li><a href="#">Reportes de médicos</a></li>
-                    </ul>
-                </li>
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
