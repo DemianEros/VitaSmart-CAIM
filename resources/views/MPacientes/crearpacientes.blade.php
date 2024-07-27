@@ -7,56 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('EstilosPacientes/css/crear.css') }}">
+    <link rel="stylesheet" href="styleloader.css">
     <title>Crear Paciente</title>
-    <style>
-        /* Estilos para el cuadro de diálogo personalizado */
-        #customDialog {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none; /* Oculto por defecto */
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .dialogBox {
-            background-color: #d4edda;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-        }
-
-        .dialogBox p {
-            margin: 0 0 20px;
-        }
-
-        .dialogBox button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .dialogBox .confirmBtn {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .dialogBox .cancelBtn {
-            background-color: #dc3545;
-            color: white;
-        }
-    </style>
 </head>
 <body>
+        <div id="loader-wrapper">
+            <span class="loader"></span>
+        </div>
+
     <div class="container">
         <h1 class="mt-5">Crear Paciente</h1>
         <form action="{{ route('pacientes.store') }}" method="POST">
@@ -139,33 +97,34 @@
                     <option value="0">No</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Guardar</button>
-            <button type="button" class="btn btn-secondary" id="cancelButton">Cancelar</button>
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cancelModal">Cancelar</button>
         </form>
     </div>
 
-    <!-- Cuadro de diálogo personalizado -->
-    <div id="customDialog">
-        <div class="dialogBox">
-            <p>¿Estás seguro de que deseas cancelar? Los datos no se guardarán.</p>
-            <button class="confirmBtn" id="confirmCancel">Sí</button>
-            <button class="cancelBtn" id="cancelDialog">No</button>
+
+    <!-- Modal de Confirmación de Cancelación -->
+    <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="cancelModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cancelModalLabel">Confirmar Cancelación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas cancelar la edición de la cita?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <a href="{{ route('pacientes') }}" class="btn btn-danger">Confirmar</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById('cancelButton').addEventListener('click', function() {
-            document.getElementById('customDialog').style.display = 'flex';
-        });
-
-        document.getElementById('confirmCancel').addEventListener('click', function() {
-            window.location.href = "{{ route('pacientes') }}";
-        });
-
-        document.getElementById('cancelDialog').addEventListener('click', function() {
-            document.getElementById('customDialog').style.display = 'none';
-        });
-    </script>
+    <script src="scriptloader.js"></script>
 </body>
 </html>
 @endsection
