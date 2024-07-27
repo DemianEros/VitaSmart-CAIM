@@ -27,36 +27,46 @@
                     <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $user->id }}">Eliminar</button>
 
                     <!-- Modal de Edición -->
-                    <div class="modal fade" id="editModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="editModalLabel">Editar Usuario</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <form action="{{ route('users.update', $user->id) }}" method="POST">
-                                    @csrf
-                                    @method('PUT')
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="name">Nombre</label>
-                                            <input type="text" class="form-control" name="name" value="{{ $user->name }}" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input type="email" class="form-control" name="email" value="{{ $user->email }}" required>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+<div class="modal fade" id="editModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Editar Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ route('users.update', $user->id) }}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" name="name" value="{{ $user->name }}" required>
                     </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" value="{{ $user->email }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Rol</label>
+                        <select class="form-control" name="role" required>
+                            @foreach($roles as $role)
+                                <option value="{{ $role->name }}" {{ $user->roles->pluck('name')->contains($role->name) ? 'selected' : '' }}>
+                                    {{ $role->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
                     <!-- Modal de Eliminación -->
                     <div class="modal fade" id="deleteModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -83,7 +93,7 @@
                         </div>
                     </div>
                     
-                    <!-- Modal para Agregar Usuario -->
+                   <!-- Modal para Agregar Usuario -->
 <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -108,6 +118,14 @@
                         <label for="password">Contraseña</label>
                         <input type="password" class="form-control" name="password" required>
                     </div>
+                    <div class="form-group">
+                        <label for="role">Rol</label>
+                        <select class="form-control" name="role" required>
+                            @foreach($roles as $role)
+                                <option value="{{ $role->name }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -117,6 +135,7 @@
         </div>
     </div>
 </div>
+
 
 
                 </td>

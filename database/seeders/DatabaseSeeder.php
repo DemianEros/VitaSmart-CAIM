@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             PermissionSeeder::class,
             UserToRoleSeeder::class,
+            PacientesSeeder::class,
+            AppointmentsSeeder::class,
         ]);
     }
 }

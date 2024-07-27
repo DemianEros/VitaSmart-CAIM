@@ -8,59 +8,7 @@
     <link rel="stylesheet" href="../EstilosPacientes/css/styles.css">
     <link rel="stylesheet" href="styleloader.css">
     <title>Pacientes</title>
-    <style>
-        /* Estilo para el div con scroll */
-        .scrollable-table {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        /* Estilos para el cuadro de diálogo personalizado */
-        #customDialog {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none; /* Oculto por defecto */
-            justify-content: center;
-            align-items: center;
-            z-index: 9999; /* Asegura que el diálogo esté sobre otros elementos */
-        }
-
-        .dialogBox {
-            background-color: #d4edda;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            max-width: 400px; /* Añade un ancho máximo */
-            width: 100%; /* Asegura que no exceda el contenedor */
-        }
-
-        .dialogBox p {
-            margin: 0 0 20px;
-        }
-
-        .dialogBox button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .dialogBox .confirmBtn {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .dialogBox .cancelBtn {
-            background-color: #dc3545;
-            color: white;
-        }
-    </style>
+    
 </head>
 <body>
         <div id="loader-wrapper">
@@ -99,7 +47,7 @@
                                 <form action="{{ route('pacientes.destroy', ['id' => $paciente->id]) }}" method="POST" class="deleteForm" style="display:inline-block;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" class="btn btn-danger btn-sm deleteButton" data-id="{{ $paciente->id }}">Eliminar</button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
@@ -120,13 +68,34 @@
             </div>
         </div>
     </div>
-    <div id="customDialog">
-        <div class="dialogBox">
-            <p>¿Estás seguro de que deseas eliminar este paciente?</p>
-            <button id="confirmDelete" class="confirmBtn">Eliminar</button>
-            <button id="cancelDelete" class="cancelBtn">Cancelar</button>
+
+    <!-- Modal de Confirmación de Eliminación -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirmar Eliminación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas eliminar esta cita?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <form action="{{ route('pacientes', ['id' => $paciente->id]) }}" method="POST" class="d-inline-block">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Confirmar</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
