@@ -75,15 +75,12 @@
                     <a href="#BitacoraSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bitacora</a>
                     <ul class="collapse list-unstyled" id="BitacoraSubmenu">
                         <li>
-                            <a href="#">Ver calendario</a>
-                        </li>
-                        <li>
-                            <a href="#">Buscar expediente</a>
+                            <a href="{{ route('bitacora') }}">Bitácora de Expedientes</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Contacto</a>
+                    <a href="{{ url('/contacto') }}">Contacto</a>
                 </li>
             </ul>
         </nav>
