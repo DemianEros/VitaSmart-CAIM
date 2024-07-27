@@ -57,15 +57,3 @@ h1 {
     background-color: #388e3c; /* Verde más oscuro */
 }
 
-.btn-secondary {
-    background-color: #c8e6c9; /* Verde claro */
-    border-color: #c8e6c9;
-    color: #2e7d32; /* Verde medio */
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.btn-secondary:hover {
-    background-color: #a5d6a7; /* Verde medio claro */
-}
