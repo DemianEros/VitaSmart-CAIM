@@ -47,27 +47,27 @@
         <!-- Sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="{{ url('/') }}" class="ccInicio">VITA-SMART</a>
+                <a href="{{ url('/') }}" class="ccInicio" style="display: inline; text-align: center; color: #CCB777; display: inline; margin-right: 5px; font-size: 25px; text-decoration: none; font-weight: bold; padding: 8px 15px; border-radius: 10px; transition: background-color 0.3s;">VITA-SMART</a>
             </div>
 
             <ul class="list-unstyled components">
-                <li><a href="{{ url('/home') }}">INICIO</a></li>
-                <li><a href="{{ route('appointments.index') }}">Generar Cita</a></li>
+                <li><a href="{{ url('/home') }}" class="sidebar-link">INICIO</a></li>
+                <li><a href="{{ route('appointments.index') }}" class="sidebar-link">Generar Cita</a></li>
                 <li>
                     <a href="#PacienteSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pacientes</a>
                     <ul class="collapse list-unstyled" id="PacienteSubmenu">
-                        <li><a href="{{ route('pacientes') }}">Buscar paciente</a></li>
-                        <li><a href="{{ route('pacientes.create') }}">Ingresar nuevo paciente</a></li>
+                        <li><a href="{{ route('pacientes') }}" class="sidebar-link" >Buscar paciente</a></li>
+                        <li><a href="{{ route('pacientes.create') }}" class="sidebar-link">Ingresar nuevo paciente</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#AdminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administrador</a>
                     <ul class="collapse list-unstyled" id="AdminSubmenu">
                         <li>
-                            <a href="{{ route('admin') }}">Panel de admin</a>
+                            <a href="{{ route('admin') }}" class="sidebar-link">Panel de admin</a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.users') }}">Usuarios</a>
+                            <a href="{{ route('admin.users') }}" class="sidebar-link">Usuarios</a>
                         </li>
 
                     </ul>
@@ -77,12 +77,12 @@
                     <ul class="collapse list-unstyled" id="BitacoraSubmenu">
 
                         <li>
-                            <a href="{{ route('bitacora') }}">Bitácora de Expedientes</a>
+                            <a href="{{ route('bitacora') }}" class="sidebar-link">Bitácora de Expedientes</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="{{ url('/contacto') }}">Contacto</a>
+                    <a href="{{ url('/contacto') }}" class="sidebar-link">Contacto</a>
                 </li>
             </ul>
         </nav>

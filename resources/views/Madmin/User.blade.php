@@ -21,14 +21,14 @@
                 <td>{{ $user->email }}</td>
                 <td>
                     <!-- Botón para editar -->
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#editModal{{ $user->id }}">Editar</button>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#editModal{{ $user->id }}">Editar</button>
                     
                     <!-- Botón para eliminar -->
                     <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $user->id }}">Eliminar</button>
 
                     <!-- Modal de Edición -->
-<div class="modal fade" id="editModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="editModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editModalLabel">Editar Usuario</h5>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <button type="submit" class="btn btn-success">Guardar Cambios</button>
                 </div>
             </form>
         </div>
@@ -69,8 +69,8 @@
 </div>
 
                     <!-- Modal de Eliminación -->
-                    <div class="modal fade" id="deleteModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                    <div class="modal fade" id="deleteModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="deleteModalLabel">Eliminar Usuario</h5>
@@ -94,8 +94,8 @@
                     </div>
                     
                    <!-- Modal para Agregar Usuario -->
-<div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addUserModalLabel">Agregar Nuevo Usuario</h5>
@@ -129,7 +129,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+                    <button type="submit" class="btn btn-success">Agregar Usuario</button>
                 </div>
             </form>
         </div>

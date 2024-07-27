@@ -114,7 +114,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ¿Estás seguro de que deseas cancelar la edición de la cita?
+                    ¿Estás seguro de que deseas cancelar la creación de la cita?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -124,7 +124,52 @@
         </div>
     </div>
 
+    <!-- Modal de Confirmación de Salida -->
+<div class="modal fade" id="exitModal" tabindex="-1" role="dialog" aria-labelledby="exitModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exitModalLabel">Confirmar Salida</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas salir? Los cambios no guardados se perderán.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmExit">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <script src="scriptloader.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const form = document.querySelector('form'); // Selecciona el formulario
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Evita la navegación inmediata
+                const targetUrl = this.getAttribute('href'); // Obtiene la URL del enlace
+
+                // Muestra el modal de confirmación
+                $('#exitModal').modal('show');
+
+                // Maneja la confirmación de salida
+                document.getElementById('confirmExit').onclick = function() {
+                    window.location.href = targetUrl; // Redirige a la URL del enlace
+                };
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
 @endsection
