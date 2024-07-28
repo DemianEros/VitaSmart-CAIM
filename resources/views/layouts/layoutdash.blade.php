@@ -87,7 +87,7 @@
                 </li>
                  @endrole
                 <li>
-                    <a href="{{ url('/contacto') }}" class="sidebar-link">Contacto</a>
+                    <a href="{{ url('/contacto') }}" target="blank" class="sidebar-link">Contacto</a>
                 </li>
             </ul>
         </nav>
