@@ -52,24 +52,28 @@
 
             <ul class="list-unstyled components">
                 <li><a href="{{ url('/home') }}">INICIO</a></li>
-                <li><a href="{{ route('appointments.index') }}">Generar Cita</a></li>
+                <li><a href="{{ route('appointments.index') }}">Citas medicas</a></li>
                 <li>
                     <a href="#PacienteSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pacientes</a>
                     <ul class="collapse list-unstyled" id="PacienteSubmenu">
                         <li><a href="{{ route('pacientes') }}">Buscar paciente</a></li>
+                        @can('pacientes.create')
                         <li><a href="{{ route('pacientes.create') }}">Ingresar nuevo paciente</a></li>
+                        @endcan
                     </ul>
                 </li>
+                @role('Admin')
                 <li>
                     <a href="#AdminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administrador</a>
                     <ul class="collapse list-unstyled" id="AdminSubmenu">
                         <li><a href="{{ route('admin') }}">Panel de admin</a></li>
                         <li><a href="{{ route('admin.users') }}">Usuarios</a></li>
-                        <li><a href="#">Roles</a></li>
                         <li><a href="{{ route('appointments.index') }}">Citas</a></li>
                         <li><a href="{{ route('pacientes') }}">Pacientes</a></li>
                     </ul>
                 </li>
+                @endrole
+                @role('Admin|Administrativo')
                 <li>
                     <a href="#BitacoraSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bitacora</a>
                     <ul class="collapse list-unstyled" id="BitacoraSubmenu">
@@ -77,6 +81,7 @@
                         <li><a href="#">Buscar expediente</a></li>
                     </ul>
                 </li>
+                @endrole
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
@@ -120,7 +125,9 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" role="menu">
                             <li class="dropdown-item"><i class="mdi mdi-account mr-1"></i>{{ Auth::user()->email }}</li>
-                            <li class="dropdown-item"><a href="#"><i class="mdi mdi-settings mr-1"></i>Ajustes</a></li>
+                            @role('Admin')
+                            <li class="dropdown-item"><a href="{{ route('admin.users') }}"><i class="mdi mdi-settings mr-1"></i>Ajustes</a></li>
+                            @endrole
                             <div class="dropdown-divider"></div>
                             <li class="dropdown-item">
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
