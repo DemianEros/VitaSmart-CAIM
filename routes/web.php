@@ -63,7 +63,12 @@ Route::post('/users', [App\Http\Controllers\UserController::class, 'store'])->na
 Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
 Route::delete('/users/{user}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');
 
-
+//Estas son las tutas para Bitacora
 Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->name('bitacora');
+Route::get('bitacora/register', [App\Http\Controllers\BitacoraController::class, 'show'])->name('bitacora.registro');
+Route::post('bitacora', [App\Http\Controllers\BitacoraController::class, 'store'])->name('bitacora.store');
+
+
+
 Route::get('/search', [App\Http\Controllers\PacientesController::class, 'search'])->name('search');
 

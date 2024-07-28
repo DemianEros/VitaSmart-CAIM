@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #dddddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+header {
+    background: #0c5b39;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77D42A 3px solid;
+}
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+header ul {
+    padding: 0;
+    list-style: none;
+}
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+header #branding {
+    float: left;
+}
+header #branding h1 {
+    margin: 0;
+}
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+#main {
+    padding: 20px;
+    background: #fff;
+    margin-top: 10px;
+}
+form {
+    margin-bottom: 20px;
+}
+form input[type="text"],
+form input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    border: 1px solid #ccc;
+}
+form input[type="submit"] {
+    width: 100%;
+    background: #0c5b39;
+    color: #fff;
+    padding: 10px;
+    border: 0;
+    cursor: pointer;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table, th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background: #0c5b39;
+    color: #fff;
+}
+.entry-row {
+    background-color: #d4edda; 
+}
+.exit-row {
+    background-color: #f8d7da; 
+}
+.hidden {
+    display: none;
+}
+#toggleButton {
+    width: 100%;
+    background: #0c5b39;
+    color: #fff;
+    padding: 10px;
+    border: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 16px;
+}
