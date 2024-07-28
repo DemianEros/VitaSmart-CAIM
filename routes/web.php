@@ -66,6 +66,7 @@ Route::delete('/users/{user}', [App\Http\Controllers\UserController::class, 'des
 //Estas son las tutas para Bitacora
 Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->name('bitacora');
 Route::get('bitacora/register', [App\Http\Controllers\BitacoraController::class, 'show'])->name('bitacora.registro');
+Route::post('bitacora', [App\Http\Controllers\BitacoraController::class, 'store'])->name('bitacora.store');
 
 
 

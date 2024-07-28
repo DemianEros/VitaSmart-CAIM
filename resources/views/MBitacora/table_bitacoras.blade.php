@@ -11,85 +11,66 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
-<div class="container">  
-    <div class="container mt-5">
-        <h2>En archivo clínico</h2>
-        <table class="table table-striped table-green-light">
-            <thead>
-                <tr>
-                    <th scope="col">Expediente</th>
-                    <th scope="col">Hora de Entrada</th>
-                    <th scope="col">Fecha de Entrega</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>001</td>
-                    <td>08:30 AM</td>
-                    <td>2024-07-27</td>
-                    <td>
-                        <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalSalida">
-                            <i class="bi bi-arrow-left-right"></i> 
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>002</td>
-                    <td>09:00 AM</td>
-                    <td>2024-07-27</td>
-                    <td>
-                        <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalSalida">
-                            <i class="bi bi-arrow-left-right"></i> 
-                        </a>
-                    </td>
-                </tr>
-                <!-- Agrega más filas aquí según sea necesario -->
-            </tbody>
-        </table>
-        
-        <h2>Fuera de archivo clínico</h2>
-        <table class="table table-striped table-green-light">
-            <thead>
-                <tr>
-                    <th scope="col">Expediente</th>
-                    <th scope="col">Fecha de Salida</th>
-                    <th scope="col">Hora de Salida</th>
-                    <th scope="col">Nombre Extractor</th>
-                    <th scope="col">Área</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>001</td>
-                    <td>2024-07-27</td>
-                    <td>05:00 PM</td>
-                    <td>Juan Pérez</td>
-                    <td>Marketing</td>
-                    <td>
-                        <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalEntrada">
-                            <i class="bi bi-arrow-left-right"></i> 
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>002</td>
-                    <td>2024-07-27</td>
-                    <td>06:00 PM</td>
-                    <td>María López</td>
-                    <td>Finanzas</td>
-                    <td>
-                        <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalEntrada">
-                            <i class="bi bi-arrow-left-right"></i> 
-                        </a>
-                    </td>
-                </tr>
-                <!-- Agrega más filas aquí según sea necesario -->
-            </tbody>
-        </table>
+    <div class="container">  
+        <div class="container mt-5">
+            <h2>En archivo clínico</h2>
+            <table class="table table-striped table-green-light">
+                <thead>
+                    <tr>
+                        <th scope="col">Expediente</th>
+                        <th scope="col">Hora de Entrada</th>
+                        <th scope="col">Fecha de Entrega</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($enArchivo as $registro)
+                        <tr>
+                            <td>{{ $registro->paciente->exp }}</td>
+                            <td>{{ $registro->hora_entrada }}</td>
+                            <td>{{ $registro->fecha_entrega }}</td>
+                            <td>
+                                <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalSalida">
+                                    <i class="bi bi-arrow-left-right"></i> 
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            
+            <h2>Fuera de archivo clínico</h2>
+            <table class="table table-striped table-green-light">
+                <thead>
+                    <tr>
+                        <th scope="col">Expediente</th>
+                        <th scope="col">Fecha de Salida</th>
+                        <th scope="col">Hora de Salida</th>
+                        <th scope="col">Nombre Extractor</th>
+                        <th scope="col">Área</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($fueraArchivo as $registro)
+                        <tr>
+                            <td>{{ $registro->paciente->exp }}</td>
+                            <td>{{ $registro->fecha_salida }}</td>
+                            <td>{{ $registro->hora_salida }}</td>
+                            <td>{{ $registro->nombre_extractor }}</td>
+                            <td>{{ $registro->area }}</td>
+                            <td>
+                                <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalEntrada">
+                                    <i class="bi bi-arrow-left-right"></i> 
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
+    
 
 
 <!-- Modal Entrada -->
