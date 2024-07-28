@@ -10,6 +10,7 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Email</th>
+                <th>Rol</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -19,6 +20,13 @@
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
+                <td>
+                    @if($user->roles->isNotEmpty())
+                        {{ $user->roles->pluck('name')->implode(', ') }} <!-- Mostrar los roles asignados -->
+                    @else
+                        Sin rol asignado
+                    @endif
+                </td>
                 <td>
                     <!-- Botón para editar -->
                     <button class="btn btn-success" data-toggle="modal" data-target="#editModal{{ $user->id }}">Editar</button>

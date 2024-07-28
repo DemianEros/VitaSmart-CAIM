@@ -11,7 +11,11 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all(); 
-        return view('users', compact('users')); 
+        $users = User::with('roles')->get(); // Cargar los usuarios con sus roles
+        $roles = Role::all(); // Obtener todos los roles
+
+        // return view('users.index', compact('users', 'roles')); // Asegúrate de que la vista tenga acceso a los usuarios y roles
+        return view('users', compact('users', 'roles')); 
     }
     
 
@@ -30,6 +34,12 @@ class UserController extends Controller
 
     return redirect()->route('admin.users')->with('success', 'Usuario actualizado con éxito.');
 }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return redirect()->route('admin.users')->with('success', 'Usuario eliminado con éxito.');
+    }
 
 public function store(Request $request)
 {
