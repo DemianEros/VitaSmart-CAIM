@@ -76,7 +76,7 @@
         }
         form input[type="submit"] {
             width: 100%;
-            background: #333;
+            background: #0c5b39;
             color: #fff;
             padding: 10px;
             border: 0;
@@ -93,14 +93,14 @@
             text-align: left;
         }
         th {
-            background: #333;
+            background: #0c5b39;
             color: #fff;
         }
         .entry-row {
-            background-color: #d4edda; /* Green background for entries */
+            background-color: #d4edda; 
         }
         .exit-row {
-            background-color: #f8d7da; /* Red background for exits */
+            background-color: #f8d7da; 
         }
         .hidden {
             display: none;
@@ -155,7 +155,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Aquí se añadirán las filas de entradas -->
+                        
                     </tbody>
                 </table>
                 <table id="exitTable">
@@ -166,7 +166,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Aquí se añadirán las filas de salidas -->
+                        
                     </tbody>
                 </table>
             </div>
@@ -177,24 +177,24 @@
         document.getElementById('entryForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
-            // Obtener valores del formulario
+            
             const name = document.getElementById('name').value;
             const entryTime = document.getElementById('entryTime').value;
             const exitTime = document.getElementById('exitTime').value;
 
-            // Guardar en el almacenamiento local
+            
             saveEntry(name, entryTime, exitTime);
 
-            // Crear una nueva fila y celdas para la tabla de entradas
+            
             addEntryToTable(name, entryTime, exitTime);
 
-            // Mostrar ventana emergente para el registro de entrada
+           
             alert('Entrada registrada satisfactoriamente.');
 
-            // Limpiar formulario
+            
             document.getElementById('entryForm').reset();
 
-            // Iniciar la verificación periódica de las horas de salida
+            
             checkExitTimes();
         });
 
@@ -213,20 +213,20 @@
         }
 
         function addEntryToTable(name, entryTime, exitTime) {
-            // Crear una nueva fila y celdas para la tabla de entradas
+            
             const entryTable = document.getElementById('entryTable').getElementsByTagName('tbody')[0];
             const newEntryRow = entryTable.insertRow(entryTable.rows.length);
-            newEntryRow.classList.add('entry-row'); // Añadir clase para el color verde
+            newEntryRow.classList.add('entry-row'); 
             const nameCellEntry = newEntryRow.insertCell(0);
             const entryTimeCell = newEntryRow.insertCell(1);
             nameCellEntry.innerHTML = name;
             entryTimeCell.innerHTML = entryTime;
 
-            // Si hay una hora de salida, crear una nueva fila y celdas para la tabla de salidas
+            
             if (exitTime) {
                 const exitTable = document.getElementById('exitTable').getElementsByTagName('tbody')[0];
                 const newExitRow = exitTable.insertRow(exitTable.rows.length);
-                newExitRow.classList.add('exit-row'); // Añadir clase para el color rojo
+                newExitRow.classList.add('exit-row'); 
                 const nameCellExit = newExitRow.insertCell(0);
                 const exitTimeCell = newExitRow.insertCell(1);
                 nameCellExit.innerHTML = name;
@@ -240,29 +240,29 @@
         }
 
         function checkExitTimes() {
-            // Obtener la hora actual
+            
             const now = new Date().toISOString();
 
-            // Obtener todas las filas de la tabla de salidas
+            
             const exitRows = document.getElementById('exitTable').getElementsByTagName('tbody')[0].rows;
 
             for (let i = 0; i < exitRows.length; i++) {
                 const exitTime = exitRows[i].cells[1].innerText;
 
-                // Calcular la diferencia en minutos entre la hora de salida y la hora actual
+                
                 const diff = (new Date(exitTime) - new Date(now)) / 1000 / 60;
 
-                // Si la hora de salida está próxima (por ejemplo, 10 minutos antes)
+                
                 if (diff > 0 && diff <= 10) {
                     alert(`La hora de salida para ${exitRows[i].cells[0].innerText} está próxima (${exitTime}).`);
                 }
             }
 
-            // Configurar para verificar nuevamente en 1 minuto
+            
             setTimeout(checkExitTimes, 60000);
         }
 
-        // Cargar entradas al cargar la página
+        
         window.onload = function() {
             loadEntries();
             checkExitTimes();
