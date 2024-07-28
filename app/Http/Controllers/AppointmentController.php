@@ -46,7 +46,15 @@ class AppointmentController extends Controller
             'date' => 'required|date|after_or_equal:' . now()->toDateString(),
             'time' => 'required|date_format:H:i',
         ]);
+        // Verificar si ya existe una cita en el mismo horario
+        $appointmentExists = Appointment::where('date', $request->date)
+            ->where('time', $request->time)
+            ->exists();
 
+        if ($appointmentExists) {
+            return response()->json(['error' => 'Ya existe una cita en este horario.'], 409); // Código 409 Conflict
+        }
+        
         $data = $request->only(['name', 'email', 'phone', 'date', 'time']);
         Appointment::create($data);
 

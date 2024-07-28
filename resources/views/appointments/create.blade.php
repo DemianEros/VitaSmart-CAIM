@@ -16,7 +16,7 @@
 <div class="container">
         <h1>Crear Cita</h1>
 
-        <form action="{{ route('appointments.store') }}" method="POST">
+        <form id="appointmentForm" action="{{ route('appointments.store') }}" method="POST">
             @csrf
 
             <div class="mb-3">
@@ -41,12 +41,40 @@
 
             <div class="mb-3">
                 <label for="time" class="form-label">Horario</label>
-                <input type="time" class="form-control" id="time" name="time" required>
+                <select class="form-control" id="time" name="time" required>
+                    <option value="">Seleccione un horario</option>
+                    <!-- Los horarios se llenarán aquí -->
+                </select>
             </div>
 
             <button type="submit" style="background-color: #74af7a; border-color: #34ff21; color:black" class="btn btn-primary">Crear cita</button>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cancelModal">Cancelar</button>
         </form>
+
+        <script>
+    document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar el envío del formulario
+
+        const formData = new FormData(this);
+
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = '{{ route('appointments.index') }}'; // Redirigir si la cita se creó con éxito
+            } else if (response.status === 409) {
+                // Mostrar el modal de advertencia si ya existe una cita en ese horario
+                $('#warningModal').modal('show');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+</script>
 
         <!-- Modal de Confirmación de Cancelación -->
 <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="cancelModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
@@ -85,6 +113,26 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-danger" id="confirmExit">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Advertencia -->
+<div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="warningModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="warningModalLabel">Advertencia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Ya existe una cita en este horario.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
@@ -142,6 +190,27 @@
     });
 </script>
 
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Definir los horarios permitidos
+            const allowedTimes = [];
+            for (let hour = 8; hour < 18; hour++) { // De 7 AM a 7 PM
+                for (let minute = 0; minute < 60; minute += 30) {
+                    const time = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+                    allowedTimes.push(time);
+                }
+            }
+
+            // Llenar el campo de horario con los tiempos permitidos
+            const timeSelect = document.getElementById('time');
+            allowedTimes.forEach(time => {
+                const option = document.createElement('option');
+                option.value = time;
+                option.textContent = time;
+                timeSelect.appendChild(option);
+            });
+        });
+    </script>
 </body>
 </html>
 @endsection

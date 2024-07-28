@@ -47,7 +47,7 @@
         <!-- Sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="{{ url('/') }}" class="ccInicio" style="display: inline; text-align: center; color: #CCB777; display: inline; margin-right: 5px; font-size: 25px; text-decoration: none; font-weight: bold; padding: 8px 15px; border-radius: 10px; transition: background-color 0.3s;">VITA-SMART</a>
+                <a href="{{ url('/') }}" class="ccInicio sidebar-link" style="display: inline; text-align: center; color: #CCB777; display: inline; margin-right: 5px; font-size: 25px; text-decoration: none; font-weight: bold; padding: 8px 15px; border-radius: 10px; transition: background-color 0.3s;">VITA-SMART</a>
             </div>
 
             <ul class="list-unstyled components">
