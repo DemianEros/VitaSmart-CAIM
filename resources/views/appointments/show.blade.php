@@ -25,15 +25,40 @@
                     Fecha: {{ $appointment->date }}<br>
                     Horario: {{ $appointment->time }}
                 </p>
+                <a href="{{ route('appointments.index')}}" style="background-color: #ffffff; border-color: #34ff21; color:black" class="btn btn-primary">Regresar</a>
+                @can('appointments.edit')
                 <a href="{{ route('appointments.edit', ['id' => $appointment->id]) }}" style="background-color: #74af7a; border-color: #34ff21; color:black" class="btn btn-primary">Editar</a>
-                <form action="{{ route('appointments.destroy', ['id' => $appointment->id]) }}" method="POST" class="d-inline-block">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                </form>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
             </div>
         </div>
     </div>
+
+    <!-- Modal de Confirmación de Eliminación -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirmar Eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar esta cita?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <form action="{{ route('appointments.destroy', ['id' => $appointment->id]) }}" method="POST" class="d-inline-block">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Confirmar</button>
+                </form>
+                @endcan
+            </div>
+        </div>
+    </div>
+</div>
+
     <script src="scriptloader.js"></script>
 </body>
 </html>
