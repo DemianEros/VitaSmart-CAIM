@@ -17,9 +17,11 @@
 
     <div class="container">
         <h1 class="mt-5">Lista de Pacientes</h1>
+        @role('Admin|Administrativo')
         <div class="button-group mb-3">
             <a href="{{ route('pacientes.create') }}" class="btn btn-success">Crear Paciente</a>
         </div>
+        @endrole
         <div class="scrollable-table">
             <table class="table table-bordered mt-3">
                 <thead>
@@ -30,7 +32,9 @@
                         <th>EXP</th>
                         <th>Fecha de Ingreso</th>
                         <th>CURP</th>
+                        @role('Admin|Administrativo')
                         <th>Acciones</th>
+                        @endrole
                     </tr>
                 </thead>
                 <tbody id="table-body">
@@ -42,6 +46,7 @@
                             <td>{{ $paciente->exp }}</td>
                             <td>{{ $paciente->fecha_ing }}</td>
                             <td>{{ $paciente->curp }}</td>
+                            @role('Admin|Administrativo')
                             <td>
                                 <a href="{{ route('pacientes.edit', ['id' => $paciente->id]) }}" class="btn btn-editar btn-sm">Editar</a>
                                 <form action="{{ route('pacientes.destroy', ['id' => $paciente->id]) }}" method="POST" class="deleteForm" style="display:inline-block;">
@@ -50,6 +55,7 @@
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
                                 </form>
                             </td>
+                            @endrole
                         </tr>
                     @endforeach
                 </tbody>

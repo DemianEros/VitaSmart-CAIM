@@ -52,26 +52,30 @@
 
             <ul class="list-unstyled components">
                 <li><a href="{{ url('/home') }}" class="sidebar-link">INICIO</a></li>
-                <li><a href="{{ route('appointments.index') }}" class="sidebar-link">Generar Cita</a></li>
+                <li><a href="{{ route('appointments.index') }}" class="sidebar-link">Citas medicas</a></li>
                 <li>
                     <a href="#PacienteSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pacientes</a>
                     <ul class="collapse list-unstyled" id="PacienteSubmenu">
-                        <li><a href="{{ route('pacientes') }}" class="sidebar-link" >Buscar paciente</a></li>
+                        <li><a href="{{ route('pacientes') }}" class="sidebar-link">Buscar paciente</a></li>
+                        @can('pacientes.create')
                         <li><a href="{{ route('pacientes.create') }}" class="sidebar-link">Ingresar nuevo paciente</a></li>
+                        @endcan
                     </ul>
                 </li>
+                @role('Admin')
                 <li>
                     <a href="#AdminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administrador</a>
                     <ul class="collapse list-unstyled" id="AdminSubmenu">
-                        <li>
-                            <a href="{{ route('admin') }}" class="sidebar-link">Panel de admin</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.users') }}" class="sidebar-link">Usuarios</a>
-                        </li>
+
+                        <li><a href="{{ route('admin') }}" class="sidebar-link">Panel de admin</a></li>
+                        <li><a href="{{ route('admin.users') }}" class="sidebar-link">Usuarios</a></li>
+                        <li><a href="{{ route('appointments.index') }}" class="sidebar-link">Citas</a></li>
+                        <li><a href="{{ route('pacientes') }}" class="sidebar-link">Pacientes</a></li>
 
                     </ul>
                 </li>
+                @endrole
+                @role('Admin|Administrativo')
                 <li>
                     <a href="#BitacoraSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bitacora</a>
                     <ul class="collapse list-unstyled" id="BitacoraSubmenu">
@@ -81,6 +85,7 @@
                         </li>
                     </ul>
                 </li>
+                 @endrole
                 <li>
                     <a href="{{ url('/contacto') }}" class="sidebar-link">Contacto</a>
                 </li>
@@ -126,7 +131,9 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" role="menu">
                             <li class="dropdown-item"><i class="mdi mdi-account mr-1"></i>{{ Auth::user()->email }}</li>
-                            <li class="dropdown-item"><a href="#"><i class="mdi mdi-settings mr-1"></i>Ajustes</a></li>
+                            @role('Admin')
+                            <li class="dropdown-item"><a href="{{ route('admin.users') }}"><i class="mdi mdi-settings mr-1"></i>Ajustes</a></li>
+                            @endrole
                             <div class="dropdown-divider"></div>
                             <li class="dropdown-item">
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
