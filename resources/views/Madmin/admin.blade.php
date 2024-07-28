@@ -28,6 +28,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
             <!-- Columna 2 -->
             <div class="col-md-6 mb-4">
