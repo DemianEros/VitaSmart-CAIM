@@ -11,66 +11,113 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
+    
     <div class="container">  
         <div class="container mt-5">
-            <h2>En archivo clínico</h2>
-            <table class="table table-striped table-green-light">
-                <thead>
-                    <tr>
-                        <th scope="col">Expediente</th>
-                        <th scope="col">Hora de Entrada</th>
-                        <th scope="col">Fecha de Entrega</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($enArchivo as $registro)
-                        <tr>
-                            <td>{{ $registro->paciente->exp }}</td>
-                            <td>{{ $registro->hora_entrada }}</td>
-                            <td>{{ $registro->fecha_entrega }}</td>
-                            <td>
-                                <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalSalida">
-                                    <i class="bi bi-arrow-left-right"></i> 
-                                </a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            
-            <h2>Fuera de archivo clínico</h2>
-            <table class="table table-striped table-green-light">
-                <thead>
-                    <tr>
-                        <th scope="col">Expediente</th>
-                        <th scope="col">Fecha de Salida</th>
-                        <th scope="col">Hora de Salida</th>
-                        <th scope="col">Nombre Extractor</th>
-                        <th scope="col">Área</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($fueraArchivo as $registro)
-                        <tr>
-                            <td>{{ $registro->paciente->exp }}</td>
-                            <td>{{ $registro->fecha_salida }}</td>
-                            <td>{{ $registro->hora_salida }}</td>
-                            <td>{{ $registro->nombre_extractor }}</td>
-                            <td>{{ $registro->area }}</td>
-                            <td>
-                                <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalEntrada">
-                                    <i class="bi bi-arrow-left-right"></i> 
-                                </a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>En archivo clínico</h2>
+                    <input type="text" id="searchExpediente" placeholder="Buscar por Expediente" class="form-control mb-3" onkeyup="filterTable('enArchivo')">
+                    
+                    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                        <table class="table table-striped table-green-light" style="font-size: 0.9rem; width: 100%;" id="enArchivo">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Expediente</th>
+                                    <th scope="col">Hora de Entrada</th>
+                                    <th scope="col">Fecha de Entrega</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($enArchivo as $registro)
+                                    <tr>
+                                        <td>{{ $registro->paciente->exp }}</td>
+                                        <td>{{ $registro->hora_entrada }}</td>
+                                        <td>{{ $registro->fecha_entrega }}</td>
+                                        <td>
+                                            <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalSalida">
+                                                <i class="bi bi-arrow-left-right"></i> 
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+    
+                <div class="col-md-6">
+                    <h2>Fuera de archivo clínico</h2>
+                    <input type="text" id="searchExpedienteFuera" placeholder="Buscar por Expediente" class="form-control mb-3" onkeyup="filterTable('fueraArchivo')">
+                    
+                    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                        <table class="table table-striped table-green-light" style="font-size: 0.9rem; width: 100%;" id="fueraArchivo">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Expediente</th>
+                                    <th scope="col">Fecha de Salida</th>
+                                    <th scope="col">Hora de Salida</th>
+                                    <th scope="col">Nombre Extractor</th>
+                                    <th scope="col">Área</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($fueraArchivo as $registro)
+                                    <tr>
+                                        <td>{{ $registro->paciente->exp }}</td>
+                                        <td>{{ $registro->fecha_salida }}</td>
+                                        <td>{{ $registro->hora_salida }}</td>
+                                        <td>{{ $registro->nombre_extractor }}</td>
+                                        <td>{{ $registro->area }}</td>
+                                        <td>
+                                            <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalEntrada">
+                                                <i class="bi bi-arrow-left-right"></i> 
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
+    <script>
+        function filterTable(tableId) {
+            const input = tableId === 'enArchivo' ? document.getElementById('searchExpediente') : document.getElementById('searchExpedienteFuera');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById(tableId);
+            const rows = table.getElementsByTagName('tr');
+    
+            for (let i = 1; i < rows.length; i++) { // Start from 1 to skip the header row
+                const cells = rows[i].getElementsByTagName('td');
+                const expediente = cells[0].textContent.toLowerCase(); // Assuming the first cell contains the expediente
+    
+                if (expediente.indexOf(filter) > -1) {
+                    rows[i].style.display = ""; // Show row
+                } else {
+                    rows[i].style.display = "none"; // Hide row
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Estilo para anclar los encabezados */
+        .table-responsive {
+            position: relative;
+        }
+        .table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: #f8f9fa; /* Color de fondo para el encabezado */
+        }
+    </style>
 
 
 <!-- Modal Entrada -->
