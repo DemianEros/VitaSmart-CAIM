@@ -1,0 +1,10 @@
+.table-green-light thead th {
+    background-color: #0c5b39;
+    color: white;
+}
+.table-green-light tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+.table-green-light tbody tr:nth-child(even) {
+    background-color: #e0f7e4;
+}

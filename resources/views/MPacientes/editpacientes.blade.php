@@ -7,56 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('EstilosPacientes/css/crear.css') }}">
+    <link rel="stylesheet" href="styleloader.css">
     <title>Editar Paciente</title>
-    <style>
-        /* Estilos para el cuadro de diálogo personalizado */
-        #customDialog {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none; /* Oculto por defecto */
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .dialogBox {
-            background-color: #d4edda;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-        }
-
-        .dialogBox p {
-            margin: 0 0 20px;
-        }
-
-        .dialogBox button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .dialogBox .confirmBtn {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .dialogBox .cancelBtn {
-            background-color: #dc3545;
-            color: white;
-        }
-    </style>
 </head>
 <body>
+        <div id="loader-wrapper">
+            <span class="loader"></span>
+        </div>
+
     <div class="container">
         <h1 class="mt-5">Editar Paciente</h1>
         <form action="{{ route('pacientes.update', ['id' => $paciente->id]) }}" method="POST">
@@ -141,32 +99,77 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Actualizar</button>
-            <button type="button" class="btn btn-secondary" id="cancelButton">Cancelar</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cancelModal">Cancelar</button>
         </form>
     </div>
 
-    <!-- Cuadro de diálogo personalizado -->
-    <div id="customDialog">
-        <div class="dialogBox">
-            <p>¿Estás seguro de que deseas cancelar? Los datos no se guardarán.</p>
-            <button class="confirmBtn" id="confirmCancel">Sí</button>
-            <button class="cancelBtn" id="cancelDialog">No</button>
+    <!-- Modal de Confirmación de Cancelación -->
+    <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="cancelModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cancelModalLabel">Confirmar Cancelación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas cancelar la edición de la cita?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <a href="{{ route('pacientes') }}" class="btn btn-danger">Confirmar</a>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Modal de Confirmación de Salida -->
+<div class="modal fade" id="exitModal" tabindex="-1" role="dialog" aria-labelledby="exitModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exitModalLabel">Confirmar Salida</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas salir? Los cambios no guardados se perderán.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmExit">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="scriptloader.js"></script>
+
     <script>
-        document.getElementById('cancelButton').addEventListener('click', function() {
-            document.getElementById('customDialog').style.display = 'flex';
-        });
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const form = document.querySelector('form'); // Selecciona el formulario
 
-        document.getElementById('confirmCancel').addEventListener('click', function() {
-            window.location.href = "{{ route('pacientes') }}";
-        });
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Evita la navegación inmediata
+                const targetUrl = this.getAttribute('href'); // Obtiene la URL del enlace
 
-        document.getElementById('cancelDialog').addEventListener('click', function() {
-            document.getElementById('customDialog').style.display = 'none';
+                // Muestra el modal de confirmación
+                $('#exitModal').modal('show');
+
+                // Maneja la confirmación de salida
+                document.getElementById('confirmExit').onclick = function() {
+                    window.location.href = targetUrl; // Redirige a la URL del enlace
+                };
+            });
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
 @endsection
