@@ -18,8 +18,7 @@ body {
     max-width: 800px;
 }
 
-h1 {
-    text-align: center;
+h2 {
     color: #333333;
 }
 
@@ -30,7 +29,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #dddddd;
+    border: 1px solid #206b31;
 }
 
 th, td {
@@ -39,7 +38,7 @@ th, td {
 }
 
 th {
-    background-color: #4CAF50;
+    background-color: #0c5b39; /* Color de fondo verde oscuro para el encabezado */
     color: white;
 }
 
@@ -50,17 +49,13 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #ddd;
 }
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+
+.table-responsive {
+    max-height: 400px; /* Ajusta la altura máxima de la tabla */
+    overflow-y: auto; /* Habilita el scroll vertical */
 }
-.container {
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-}
+
+/* Estilos para el encabezado */
 header {
     background: #0c5b39;
     color: #fff;
@@ -68,39 +63,42 @@ header {
     min-height: 70px;
     border-bottom: #77D42A 3px solid;
 }
+
 header a {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
 }
+
 header ul {
     padding: 0;
     list-style: none;
 }
+
 header li {
     float: left;
     display: inline;
-    padding: 0 20px 0 20px;
+    padding: 0 20px;
 }
+
 header #branding {
     float: left;
 }
+
 header #branding h1 {
     margin: 0;
 }
+
 header nav {
     float: right;
     margin-top: 10px;
 }
-#main {
-    padding: 20px;
-    background: #fff;
-    margin-top: 10px;
-}
+
 form {
     margin-bottom: 20px;
 }
+
 form input[type="text"],
 form input[type="datetime-local"] {
     width: 100%;
@@ -108,6 +106,7 @@ form input[type="datetime-local"] {
     margin: 5px 0 20px 0;
     border: 1px solid #ccc;
 }
+
 form input[type="submit"] {
     width: 100%;
     background: #0c5b39;
@@ -116,29 +115,19 @@ form input[type="submit"] {
     border: 0;
     cursor: pointer;
 }
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-table, th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-th {
-    background: #0c5b39;
-    color: #fff;
-}
+
 .entry-row {
     background-color: #d4edda; 
 }
+
 .exit-row {
     background-color: #f8d7da; 
 }
+
 .hidden {
     display: none;
 }
+
 #toggleButton {
     width: 100%;
     background: #0c5b39;
