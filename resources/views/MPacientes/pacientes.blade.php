@@ -98,6 +98,28 @@
             </div>
         </div>
     </div>
+
+<!-- Modal de No Coincidencias -->
+<div class="modal fade" id="noMatchesModal" tabindex="-1" role="dialog" aria-labelledby="noMatchesModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noMatchesModalLabel">Sin Coincidencias</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                No se encontraron coincidencias para tu búsqueda.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -137,6 +159,14 @@
         });
     </script>
     <script src="scriptloader.js"></script>
+    <script>
+        @if($noPacientes)
+        $(document).ready(function() {
+            $('#noMatchesModal').modal('show');
+        });
+        @endif
+    </script>
+
 </body>
 </html>
 @endsection

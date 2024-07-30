@@ -57,6 +57,7 @@ class PacientesController extends Controller
 }
 
 
+
     public function create()
     {
         return view('MPacientes.crearpacientes');
