@@ -7,6 +7,7 @@
         <meta name="author" content="" />
         <title>VitaSmart</title>
         <link rel="icon" type="image/x-icon" href="EstilosWelcome/img/Icono.png" />
+        <link rel="stylesheet" href="styleloader.css">
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -24,6 +25,10 @@
         <link href="EstilosWelcome/css/styles.css" rel="stylesheet" />
     </head>
     <body>
+        
+        <div id="loader-wrapper">
+            <span class="loader"></span>
+        </div>
         
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
@@ -72,7 +77,7 @@
                 <!-- <a class="btn btn-dark m-3" href="#!">-->
                 <a href="{{ url('/idyhome') }}" target="_blank" class="btn btn-dark m-3 icon-link"><img src="IconoIDY.ico" alt="Ícono Personalizado"><span class="link-text">Conocenos</span></a>
                 <a href="{{ url('/contacto') }}" target="_blank" class="btn btn-dark m-3 icon-link"><i class="fas fa-comments"></i><span class="link-text">Contactanos</span></a>
-                <a href="../EstilosWelcome/Documento/Manualdeusuario.pdf" download="Manualdeusuario.pdf" class="btn btn-dark m-3 icon-link"><i class="fas fa-file-pdf"></i><span class="link-text">Manual de Usuario</span></a>
+                <a href="../EstilosWelcome/Documento/ManualDeUsuario.pdf" download="ManualDeUsuario.pdf" class="btn btn-dark m-3 icon-link"><i class="fas fa-file-pdf"></i><span class="link-text">Manual de Usuario</span></a>
             </div>
         </div>
         <!-- Bootstrap core JS-->
@@ -84,5 +89,6 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="scriptloader.js"></script>
     </body>
 </html>
