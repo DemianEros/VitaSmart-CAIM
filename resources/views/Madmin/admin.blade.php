@@ -31,6 +31,7 @@
         </div>
 
             <!-- Columna 2 -->
+        <div class="row justify-content-center align-items-center">
             <div class="col-md-6 mb-4">
                 <div class="card">
                     <div class="card-body">
@@ -41,8 +42,10 @@
                     </div>
                 </div>
             </div>
+        </div>
 
             <!-- Columna 3 -->
+        <div class="row justify-content-center align-items-center">
             <div class="col-md-6 mb-4">
                 <div class="card">
                     <div class="card-body">
@@ -53,6 +56,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 

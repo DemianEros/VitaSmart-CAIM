@@ -91,7 +91,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                        <h2>Pricing</h2>
+                        <h2>Equipo IdyWorld</h2>
                   </div>
                </div>
             </div>
@@ -104,37 +104,122 @@
                <div class="col-md-12">
                   <div class="titlepage">
                    
-                     <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy </span>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="pricing">
-                     <h4>STARTER PLAN</h4>
-                     <h3><span>$</span>60</h3>
-                     <p>Unlimited access to content Fully Secure online backup One Year round the clock support FREE complimentary lanyard</p>
-                     <a class="read_more dark_bg" href="Javascript:void(0)"> Starte Now</a>
-                  </div>
-               </div>
-               <div class="col-md-4 ho_bor">
-                  <div class="pricing ">
-                     <h4>STARTER PLAN</h4>
-                     <h3><span>$</span>60</h3>
-                     <p>Unlimited access to content Fully Secure online backup One Year round the clock support FREE complimentary lanyard</p>
-                     <a class="read_more dark_bg" href="Javascript:void(0)"> Starte Now</a>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="pricing">
-                     <h4>STARTER PLAN</h4>
-                     <h3><span>$</span>60</h3>
-                     <p>Unlimited access to content Fully Secure online backup One Year round the clock support FREE complimentary lanyard</p>
-                     <a class="read_more dark_bg" href="Javascript:void(0)"> Starte Now</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end pricing -->
+                  <!DOCTYPE html>
+<html lang="es">
+<head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conoce a los Ingenieros en Sistemas</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .member {
+            text-align: center;
+            margin: 20px;
+            max-width: 300px;
+        }
+        .member img {
+            width: 200px; /* Ajusta el tamaño de ancho deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            border-radius: 50%;
+        }
+        .description {
+            text-align: justify; /* Justifica el texto */
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .social-links a {
+            text-decoration: none;
+            color: #000;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Conoce a los Ingenieros en Sistemas</h1>
+<div class="container">
+    <div class="member" style="border: 2px solid black; padding: 10px; margin: 10px;">
+        <a href="https://x.com/MarlowieIan?t=zq9CcewwvWLhOsVjwT2fKw&s=09" target="_blank">
+            <img src="../EstilosIDY/images/foto1.png" alt="Ian Marlowie Arrollo Granados" />
+        </a>
+        <h3>Ian Marlowie Arrollo Granados</h3>
+        <p class="description">
+            Ian Marlowie es un ingeniero en sistemas con más de 10 años de experiencia en el desarrollo de software. Especializado en aplicaciones web y móviles, Ian ha trabajado en proyectos de gran escala para empresas internacionales. Es un apasionado del código limpio y las mejores prácticas de desarrollo. En su tiempo libre, disfruta enseñando programación a jóvenes estudiantes.
+        </p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/takeroian?mibextid=ZbWKwL" target="_blank">Facebook</a> |
+            <a href="https://www.linkedin.com/in/ian-marlowie-arroyo-granados-677190309?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="member" style="border: 2px solid black; padding: 10px; margin: 10px;">
+        <a href="https://www.facebook.com/gustavo.valverde" target="_blank">
+            <img src="../EstilosIDY/images/foto2.png" alt="Gustavo Alberto Valverde Aranda" />
+        </a>
+        <h3>Gustavo Alberto Valverde Aranda</h3>
+        <p class="description">
+            Gustavo Alberto es un ingeniero en sistemas con experiencia en ciberseguridad y redes. Ha liderado equipos en la implementación de infraestructuras seguras para varias empresas de tecnología. Su conocimiento en criptografía y protección de datos ha sido fundamental para proteger información sensible. Además, Gustavo es un ferviente defensor de la privacidad en línea.
+        </p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100006273259018" target="_blank">Facebook</a> |
+            <a href="https://www.linkedin.com/in/gustavovalverde" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="member" style="border: 2px solid black; padding: 10px; margin: 10px;">
+        <a href="https://www.facebook.com/leopoldo.carbajal" target="_blank">
+            <img src="../EstilosIDY/images/foto3.png" alt="Leopoldo Carbajal Zaldivar" />
+        </a>
+        <h3>Leopoldo Carbajal Zaldivar</h3>
+        <p class="description">
+            Leopoldo es un ingeniero en sistemas especializado en inteligencia artificial y aprendizaje automático. Con un doctorado en Ciencias de la Computación, ha publicado numerosos artículos en revistas académicas y conferencias internacionales. Leopoldo trabaja actualmente en el desarrollo de algoritmos de IA para la industria de la salud, mejorando diagnósticos y tratamientos.
+        </p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/leopoldo.carbajal" target="_blank">Facebook</a> |
+            <a href="https://www.linkedin.com/in/leopoldocarbajal" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="member" style="border: 2px solid black; padding: 10px; margin: 10px;">
+        <a href="https://www.facebook.com/acxel.calderon" target="_blank">
+            <img src="../EstilosIDY/images/foto4.png" alt="Acxel Demian Calderon Godinez" />
+        </a>
+        <h3>Acxel Demian Calderon Godinez</h3>
+        <p class="description">
+            Acxel Demian es un ingeniero en sistemas con una sólida formación en desarrollo de software y gestión de proyectos. Ha trabajado en múltiples startups, ayudando a lanzar productos innovadores al mercado. Su habilidad para integrar equipos y optimizar procesos de desarrollo ha sido clave en el éxito de varios proyectos tecnológicos.
+        </p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/acxel.calderon" target="_blank">Facebook</a> |
+            <a href="https://www.linkedin.com/in/acxelcalderon" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="member" style="border: 2px solid black; padding: 10px; margin: 10px;">
+        <a href="https://www.facebook.com/alberto.ortega" target="_blank">
+            <img src="../EstilosIDY/images/foto5.png" alt="Alberto Ortega Mondragon" />
+        </a>
+        <h3>Alberto Ortega Mondragon</h3>
+        <p class="description">
+            Alberto Ortega es un ingeniero en sistemas con una vasta experiencia en el desarrollo de aplicaciones móviles y juegos. Su creatividad y habilidades en diseño gráfico le permiten crear experiencias de usuario atractivas y funcionales. Alberto ha lanzado varios juegos móviles exitosos y sigue explorando nuevas tecnologías para mejorar la jugabilidad.
+        </p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/alberto.ortega" target="_blank">Facebook</a> |
+            <a href="https://www.linkedin.com/in/albertoortega" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</div>
+
+
+        </div>
+    </div>
+</body>
+</html>
      
       <!--  footer -->
       <footer>
@@ -143,10 +228,10 @@
                <div class="row">
                   <div class="col-md-8 offset-md-2">
                      <div class="newslatter">
-                        <h4>Subscribe Our Newsletter</h4>
+                        <h4>Suscribete</h4>
                         <form class="bottom_form">
                            <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
-                           <button class="sub_btn">subscribe</button>
+                           <button class="sub_btn">Suscribir</button>
                         </form>
                      </div>
                   </div>
