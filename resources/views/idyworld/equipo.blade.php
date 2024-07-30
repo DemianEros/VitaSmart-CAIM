@@ -159,7 +159,7 @@
     </div>
 
     <div class="member" style="border: 2px solid black; padding: 10px; margin: 10px;">
-        <a href="https://www.facebook.com/gustavo.valverde" target="_blank">
+        <a href="https://www.facebook.com/profile.php?id=100006273259018" target="_blank">
             <img src="../EstilosIDY/images/foto2.png" alt="Gustavo Alberto Valverde Aranda" />
         </a>
         <h3>Gustavo Alberto Valverde Aranda</h3>
@@ -168,12 +168,12 @@
         </p>
         <div class="social-links">
             <a href="https://www.facebook.com/profile.php?id=100006273259018" target="_blank">Facebook</a> |
-            <a href="https://www.linkedin.com/in/gustavovalverde" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/idy-world-270963312/" target="_blank">LinkedIn</a>
         </div>
     </div>
 
     <div class="member" style="border: 2px solid black; padding: 10px; margin: 10px;">
-        <a href="https://www.facebook.com/leopoldo.carbajal" target="_blank">
+        <a href="https://www.facebook.com/leo.jkzero.3" target="_blank">
             <img src="../EstilosIDY/images/foto3.png" alt="Leopoldo Carbajal Zaldivar" />
         </a>
         <h3>Leopoldo Carbajal Zaldivar</h3>
@@ -181,13 +181,13 @@
             Leopoldo es un ingeniero en sistemas especializado en inteligencia artificial y aprendizaje automático. Con un doctorado en Ciencias de la Computación, ha publicado numerosos artículos en revistas académicas y conferencias internacionales. Leopoldo trabaja actualmente en el desarrollo de algoritmos de IA para la industria de la salud, mejorando diagnósticos y tratamientos.
         </p>
         <div class="social-links">
-            <a href="https://www.facebook.com/leopoldo.carbajal" target="_blank">Facebook</a> |
-            <a href="https://www.linkedin.com/in/leopoldocarbajal" target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/leo.jkzero.3" target="_blank">Facebook</a> |
+            <a href="https://www.linkedin.com/in/idy-world-270963312/" target="_blank">LinkedIn</a>
         </div>
     </div>
 
     <div class="member" style="border: 2px solid black; padding: 10px; margin: 10px;">
-        <a href="https://www.facebook.com/acxel.calderon" target="_blank">
+        <a href="https://www.facebook.com/acxeldemian.calderongodinez.35" target="_blank">
             <img src="../EstilosIDY/images/foto4.png" alt="Acxel Demian Calderon Godinez" />
         </a>
         <h3>Acxel Demian Calderon Godinez</h3>
@@ -195,13 +195,13 @@
             Acxel Demian es un ingeniero en sistemas con una sólida formación en desarrollo de software y gestión de proyectos. Ha trabajado en múltiples startups, ayudando a lanzar productos innovadores al mercado. Su habilidad para integrar equipos y optimizar procesos de desarrollo ha sido clave en el éxito de varios proyectos tecnológicos.
         </p>
         <div class="social-links">
-            <a href="https://www.facebook.com/acxel.calderon" target="_blank">Facebook</a> |
-            <a href="https://www.linkedin.com/in/acxelcalderon" target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/acxeldemian.calderongodinez.35" target="_blank">Facebook</a> |
+            <a href="https://www.linkedin.com/in/idy-world-270963312/" target="_blank">LinkedIn</a>
         </div>
     </div>
 
     <div class="member" style="border: 2px solid black; padding: 10px; margin: 10px;">
-        <a href="https://www.facebook.com/alberto.ortega" target="_blank">
+        <a href="https://www.facebook.com/alberto.ortega.315428" target="_blank">
             <img src="../EstilosIDY/images/foto5.png" alt="Alberto Ortega Mondragon" />
         </a>
         <h3>Alberto Ortega Mondragon</h3>
@@ -209,8 +209,8 @@
             Alberto Ortega es un ingeniero en sistemas con una vasta experiencia en el desarrollo de aplicaciones móviles y juegos. Su creatividad y habilidades en diseño gráfico le permiten crear experiencias de usuario atractivas y funcionales. Alberto ha lanzado varios juegos móviles exitosos y sigue explorando nuevas tecnologías para mejorar la jugabilidad.
         </p>
         <div class="social-links">
-            <a href="https://www.facebook.com/alberto.ortega" target="_blank">Facebook</a> |
-            <a href="https://www.linkedin.com/in/albertoortega" target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/alberto.ortega.315428" target="_blank">Facebook</a> |
+            <a href="https://www.linkedin.com/in/idy-world-270963312/" target="_blank">LinkedIn</a>
         </div>
     </div>
 </div>
