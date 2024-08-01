@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             UserToRoleSeeder::class,
             PacientesSeeder::class,
             AppointmentsSeeder::class,
+            BitacoraSeeder::class,
         ]);
     }
 }
