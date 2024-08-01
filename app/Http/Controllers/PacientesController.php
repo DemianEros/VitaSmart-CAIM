@@ -128,10 +128,10 @@ class PacientesController extends Controller
         return redirect()->route('pacientes')->with('success', 'Paciente actualizado exitosamente.');
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        $paciente = Paciente::findOrFail($id);
-        $paciente->delete();
+        $request = Paciente::findOrFail($id);
+        $request->delete();
 
         return redirect()->route('pacientes')->with('success', 'Paciente eliminado exitosamente.');
     }
