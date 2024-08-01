@@ -114,7 +114,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ¿Estás seguro de que deseas cancelar la edición de la cita?
+                    ¿Estás seguro de que deseas cancelar la edición del paciente?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
