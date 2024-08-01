@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        <form action="{{ route('pacientes', ['id' => $paciente->id]) }}" method="POST" class="d-inline-block">
+                                        <form action="{{ route('pacientes.destroy', ['id' => $paciente->id]) }}" method="POST" class="d-inline-block">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Confirmar</button>

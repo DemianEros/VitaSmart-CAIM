@@ -76,7 +76,7 @@ class PacientesController extends Controller
             'nombre' => 'required|string|max:255',
             'sexo' => 'required|string|max:1',
             'fecha_nac' => 'required|date',
-            'parent' => 'required|string|max:255',
+            'parent' => 'required|string',
             'colonia' => 'required|string|max:255',
             'calle' => 'required|string|max:255',
             'numero' => 'required|string|max:255',
