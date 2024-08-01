@@ -31,13 +31,11 @@
                 <label for="exp">Expediente</label>
                 <input type="text" name="exp" class="form-control" required oninput="this.value = this.value.toUpperCase()">
             </div>
+            <hr>
+            <h1>Datos personales</h1>
             <div class="form-group">
-                <label for="curp">CRRP</label>
+                <label for="curp">CURP</label>
                 <input type="text" name="curp" class="form-control" required oninput="this.value = this.value.toUpperCase()">
-            </div>
-            <div class="form-group">
-                <label for="fecha_ing">Fecha Ingreso</label>
-                <input type="date" name="fecha_ing" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="paterno">Apellido Paterno</label>
@@ -63,10 +61,6 @@
                 <input type="date" name="fecha_nac" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="parent">Parentesco</label>
-                <input type="text" name="parent" class="form-control" required oninput="this.value = this.value.toUpperCase()">
-            </div>
-            <div class="form-group">
                 <label for="colonia">Colonia</label>
                 <input type="text" name="colonia" class="form-control" required oninput="this.value = this.value.toUpperCase()">
             </div>
@@ -81,6 +75,16 @@
             <div class="form-group">
                 <label for="telefono">Teléfono</label>
                 <input type="text" name="telefono" class="form-control" required oninput="this.value = this.value.toUpperCase()">
+            </div>
+            <hr>
+            <h1>Datos del registro</h1>
+            <div class="form-group">
+                <label for="fecha_ing">Fecha Ingreso</label>
+                <input type="date" name="fecha_ing" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="parent">Parentesco</label>
+                <input type="text" name="parent" class="form-control" required oninput="this.value = this.value.toUpperCase()">
             </div>
             <div class="form-group">
                 <label for="seg_pop">Seguro Popular</label>
