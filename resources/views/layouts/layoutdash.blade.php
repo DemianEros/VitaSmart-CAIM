@@ -89,6 +89,17 @@
                 <li>
                     <a href="{{ url('/contacto') }}" target="blank" class="sidebar-link">Contacto</a>
                 </li>
+                <li><br></li>
+                <li><br></li>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <li>
+                    <a href="#" class="sidebar-link" data-toggle="modal" data-target="#privacyModal">Aviso de Privacidad</a>
+                </li>
             </ul>
         </nav>
 
@@ -149,6 +160,35 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Modal de Aviso de Privacidad -->
+<div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="privacyModalLabel">Aviso de Privacidad de VitaSmart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Aquí puedes agregar tu aviso de privacidad -->
+                <p>En VitaSmart, valoramos y respetamos tu privacidad. Estamos comprometidos con la protección y el manejo adecuado de tus datos personales conforme a las leyes y regulaciones aplicables en materia de protección de datos. Este aviso de privacidad detalla cómo recopilamos, utilizamos, almacenamos y protegemos la información personal que nos proporcionas al utilizar nuestros servicios.</p>
+                <p>1. Recopilación de Datos Personales <br> Recopilamos únicamente los datos personales necesarios para ofrecerte nuestros servicios, los cuales pueden incluir tu nombre, dirección de correo electrónico, número de teléfono, información de pago, y otros detalles relevantes. Estos datos son recopilados de manera transparente y con tu consentimiento explícito.</p>
+                <p>2. Uso de la Información <br> Utilizamos tus datos personales para los siguientes fines: <br> •	Proveer y mejorar nuestros productos y servicios. <br> •	Gestionar tu cuenta y personalizar tu experiencia. <br> •	Cumplir con nuestras obligaciones legales y regulatorias.</p>
+                <p>3. Almacenamiento y Protección de Datos <br> Tus datos personales son almacenados en sistemas seguros que cumplen con los estándares de la industria para la protección de la información. Implementamos medidas de seguridad técnicas, organizativas y administrativas para evitar el acceso no autorizado, la divulgación, modificación o destrucción de tu información.</p>
+                <p>4. Compartición de Información <br>No compartimos tus datos personales con terceros, salvo en los siguientes casos: <br>•	Con proveedores de servicios que actúan en nuestro nombre, bajo acuerdos de confidencialidad y únicamente para los fines mencionados en este aviso. <br>•	Cuando estemos obligados por ley a compartir tus datos con autoridades competentes. <br>•	Si consideramos que la divulgación es necesaria para proteger nuestros derechos, tu seguridad o la seguridad de otros.</p>
+                <p>5. Derechos del Usuario <br>Tienes el derecho de acceder, rectificar, cancelar u oponerte al tratamiento de tus datos personales. Para ejercer estos derechos o si tienes alguna pregunta o inquietud sobre cómo manejamos tus datos, puedes contactarnos a través de [idyworld2024@gmail.com]. </p>
+                <p>6. Cambios en el Aviso de Privacidad <br>Este aviso de privacidad puede ser actualizado para reflejar cambios en nuestras prácticas de manejo de datos. Te notificaremos sobre cualquier cambio significativo y te proporcionaremos la versión actualizada en nuestra página web.</p>
+                <p>Al utilizar nuestros servicios, confirmas que has leído y aceptado las prácticas descritas en este aviso de privacidad. Si tienes alguna pregunta o inquietud sobre el manejo de tus datos personales, por favor, contáctanos en cualquier momento.</p>
+                <!-- Puedes agregar más contenido según sea necesario -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
