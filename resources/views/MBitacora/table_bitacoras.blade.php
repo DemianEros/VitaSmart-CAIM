@@ -8,10 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../EstilosBitacora/CSS/tablas.css">
+    <link rel="stylesheet" href="styleloader.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
-    
+        <div id="loader-wrapper">
+            <span class="loader"></span>
+        </div>
     <div class="container">  
         <div class="container mt-5">
             <div class="row">
@@ -258,6 +261,7 @@
         modal.find('#expedienteSalida').val(expediente).prop('readonly', true);
     });
 </script>
+<script src="scriptloader.js"></script>
 </body>
 </html>
 @endsection

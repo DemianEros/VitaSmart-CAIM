@@ -1,6 +1,18 @@
 @extends('layouts.layoutdash')
 
 @section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="styleloader.css">
+</head>
+<body>
+        <div id="loader-wrapper">
+            <span class="loader"></span>
+        </div>
 <div class="container">
     <h1>Lista de Usuarios</h1>
     <button class="btn btn-success mb-3" data-toggle="modal" data-target="#addUserModal">Agregar Usuario</button>
@@ -152,4 +164,7 @@
         </tbody>
     </table>
 </div>
+<script src="scriptloader.js"></script>
+</body>
+</html>
 @endsection
