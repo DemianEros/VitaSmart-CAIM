@@ -49,11 +49,7 @@
                             @role('Admin|Administrativo')
                             <td>
                                 <a href="{{ route('pacientes.edit', ['id' => $paciente->id]) }}" class="btn btn-editar btn-sm">Editar</a>
-                                <form action="{{ route('pacientes.destroy', ['id' => $paciente->id]) }}" method="POST" class="deleteForm" style="display:inline-block;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
-                                </form>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
                             </td>
                             @endrole
                         </tr>
@@ -72,7 +68,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        <form action="{{ route('pacientes', ['id' => $paciente->id]) }}" method="POST" class="d-inline-block">
+                                        <form action="{{ route('pacientes.destroy', ['id' => $paciente->id]) }}" method="POST" class="d-inline-block">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Confirmar</button>
