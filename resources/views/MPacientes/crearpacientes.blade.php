@@ -83,14 +83,8 @@
                 <input type="date" id="fecha_ing" name="fecha_ing" class="form-control" required readonly>
             </div>
             <div class="form-group">
-                <label for="parentezco">Parentesco</label>
-                <select name="parentezco" class="form-control" required>
-                    <option value="titular">Titular</option>
-                    <option value="padre">Padre</option>
-                    <option value="abuelo">Abuelo</option>
-                    <option value="hijo">Hijo</option>
-                    <option value="conyuge">Cónyuge</option>
-                </select>
+                <label for="parent">Parentesco</label>
+                <input type="text" name="parent" class="form-control" required oninput="this.value = this.value.toUpperCase()">
             </div>
             <div class="form-group">
                 <label for="seg_pop">Seguro Popular</label>
