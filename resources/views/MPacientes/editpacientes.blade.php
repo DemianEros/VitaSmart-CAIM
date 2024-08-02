@@ -17,7 +17,7 @@
 
     <div class="container">
         <h1 class="mt-5">Editar Paciente</h1>
-        <form action="{{ route('pacientes.update', ['id' => $paciente->id]) }}" method="POST">
+        <form action="{{ route('pacientes.update', ['id' => $paciente->id])}}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -32,13 +32,11 @@
                 <label for="exp">Expediente</label>
                 <input type="text" name="exp" class="form-control" value="{{ $paciente->exp }}" required oninput="this.value = this.value.toUpperCase()">
             </div>
+            <hr>
+            <h1>Datos personales</h1>
             <div class="form-group">
                 <label for="curp">CURP</label>
                 <input type="text" name="curp" class="form-control" value="{{ $paciente->curp }}" required oninput="this.value = this.value.toUpperCase()">
-            </div>
-            <div class="form-group">
-                <label for="fecha_ing">Fecha Ingreso</label>
-                <input type="date" name="fecha_ing" class="form-control" value="{{ $paciente->fecha_ing }}" required>
             </div>
             <div class="form-group">
                 <label for="paterno">Apellido Paterno</label>
@@ -64,10 +62,6 @@
                 <input type="date" name="fecha_nac" class="form-control" value="{{ $paciente->fecha_nac }}" required>
             </div>
             <div class="form-group">
-                <label for="parent">Parentesco</label>
-                <input type="text" name="parent" class="form-control" value="{{ $paciente->parent }}" required oninput="this.value = this.value.toUpperCase()">
-            </div>
-            <div class="form-group">
                 <label for="colonia">Colonia</label>
                 <input type="text" name="colonia" class="form-control" value="{{ $paciente->colonia }}" required oninput="this.value = this.value.toUpperCase()">
             </div>
@@ -82,6 +76,22 @@
             <div class="form-group">
                 <label for="telefono">Teléfono</label>
                 <input type="text" name="telefono" class="form-control" value="{{ $paciente->telefono }}" required oninput="this.value = this.value.toUpperCase()">
+            </div>
+            <hr>
+            <h1>Datos del registro</h1>
+            <div class="form-group">
+                <label for="fecha_ing">Fecha Ingreso</label>
+                <input type="date" name="fecha_ing" class="form-control" value="{{ $paciente->fecha_ing }}" required readonly>
+            </div>
+            <div class="form-group">
+                <label for="parent">Parentesco</label>
+                <select name="parent" class="form-control" required>
+                    <option value="titular" {{ $paciente->parent == 'titular' ? 'selected' : '' }}>Titular</option>
+                    <option value="padre" {{ $paciente->parent == 'padre' ? 'selected' : '' }}>Padre</option>
+                    <option value="abuelo" {{ $paciente->parent == 'abuelo' ? 'selected' : '' }}>Abuelo</option>
+                    <option value="hijo" {{ $paciente->parent == 'hijo' ? 'selected' : '' }}>Hijo</option>
+                    <option value="conyuge" {{ $paciente->parent == 'conyuge' ? 'selected' : '' }}>Cónyuge</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="seg_pop">Seguro Popular</label>
@@ -114,7 +124,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ¿Estás seguro de que deseas cancelar la edición de la cita?
+                    ¿Estás seguro de que deseas cancelar la edición del paciente?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
