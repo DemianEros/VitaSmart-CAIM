@@ -34,7 +34,7 @@
             <hr>
             <h1>Datos personales</h1>
             <div class="form-group">
-                <label for="curp">CRRP</label>
+                <label for="curp">CURP</label>
                 <input type="text" name="curp" class="form-control" required oninput="this.value = this.value.toUpperCase()">
             </div>
             <div class="form-group">
