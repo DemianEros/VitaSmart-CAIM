@@ -84,7 +84,13 @@
             </div>
             <div class="form-group">
                 <label for="parent">Parentesco</label>
-                <input type="text" name="parent" class="form-control" required oninput="this.value = this.value.toUpperCase()">
+                <select name="parent" class="form-control" required>
+                    <option value="titular">Titular</option>
+                    <option value="padre">Padre</option>
+                    <option value="abuelo">Abuelo</option>
+                    <option value="hijo">Hijo</option>
+                    <option value="conyuge">Cónyuge</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="seg_pop">Seguro Popular</label>
