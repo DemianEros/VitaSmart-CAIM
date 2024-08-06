@@ -52,7 +52,7 @@
                 <div class="container-fluid px-4 px-lg-0">
 
                     <div class=Logo><img src="EstilosWelcome/img/Logo.png" alt=""></div>
-                    <p class="mb-5">"Bienvenidos a VitaSmart: Simplificando la gestión clínica con inteligencia y precisión, para que tu atención médica sea más fácil y efectiva que nunca."</p>
+                    <p class="mb-5">"Bienvenidos a VitaSmart: Simplificando de la gestión clínica con inteligencia y precisión."</p>
                     <!-- Navegacion de Inicio Sesion y Registro-->
                     <div class="row input-group-newsletter">
                         <div class="col-auto">

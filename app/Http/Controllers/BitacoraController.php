@@ -15,11 +15,6 @@ class BitacoraController extends Controller
         $this->middleware('verified');
     }
 
-    /**
-     * Mostrar la lista de registros de bitácora.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         $enArchivo = Bitacora::with('paciente')
@@ -33,39 +28,30 @@ class BitacoraController extends Controller
         return view('MBitacora.table_bitacoras', compact('enArchivo', 'fueraArchivo'));
     }
 
+    public function update(Request $request, $type)
+{
+    $validatedData = $request->validate([
+        'expediente' => 'required|string|max:255',
+        'hora_entrada' => 'nullable|date_format:H:i',
+        'fecha_entrega' => 'nullable|date',
+        'fecha_salida' => 'nullable|date',
+        'hora_salida' => 'nullable|date_format:H:i',
+        'nombre_extractor' => 'nullable|string|max:255',
+        'area' => 'nullable|string|max:255',
+        'estatus' => 'required|boolean',
+    ]);
 
-    /**
-     * Mostrar el formulario para registrar un nuevo registro en la bitácora.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function show()
-    {
-        $pacientes = Paciente::all();
-        return view('MBitacora.registro_bitacora', compact('pacientes'));
-    }
+    \Log::info('Datos recibidos para actualización:', $validatedData); // Añadido para depuración
 
-    /**
-     * Almacenar un nuevo registro en la bitácora.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'paciente_id' => 'required|exists:pacientes,id',
-            'hora_entrada' => 'nullable|date_format:H:i',
-            'fecha_entrega' => 'nullable|date',
-            'fecha_salida' => 'nullable|date',
-            'hora_salida' => 'nullable|date_format:H:i',
-            'nombre_extractor' => 'nullable|string|max:255',
-            'area' => 'nullable|string|max:255',
-            'estatus' => 'required|boolean',
-        ]);
+    $bitacora = Bitacora::whereHas('paciente', function ($query) use ($request) {
+        $query->where('exp', $request->expediente);
+    })->firstOrFail();
 
-        Bitacora::create($validatedData);
+    \Log::info('Registro encontrado:', $bitacora->toArray()); // Añadido para depuración
 
-        return redirect()->route('bitacora')->with('success', 'Registro creado con éxito.');
-    }
+    $bitacora->update($validatedData);
+
+    return redirect()->route('bitacora')->with('success', 'Registro actualizado con éxito.');
+}
+
 }

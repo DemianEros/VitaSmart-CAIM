@@ -31,13 +31,11 @@
                 <label for="exp">Expediente</label>
                 <input type="text" name="exp" class="form-control" required oninput="this.value = this.value.toUpperCase()">
             </div>
+            <hr>
+            <h1>Datos personales</h1>
             <div class="form-group">
                 <label for="curp">CRRP</label>
                 <input type="text" name="curp" class="form-control" required oninput="this.value = this.value.toUpperCase()">
-            </div>
-            <div class="form-group">
-                <label for="fecha_ing">Fecha Ingreso</label>
-                <input type="date" name="fecha_ing" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="paterno">Apellido Paterno</label>
@@ -63,10 +61,6 @@
                 <input type="date" name="fecha_nac" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="parent">Parentesco</label>
-                <input type="text" name="parent" class="form-control" required oninput="this.value = this.value.toUpperCase()">
-            </div>
-            <div class="form-group">
                 <label for="colonia">Colonia</label>
                 <input type="text" name="colonia" class="form-control" required oninput="this.value = this.value.toUpperCase()">
             </div>
@@ -82,13 +76,29 @@
                 <label for="telefono">Teléfono</label>
                 <input type="text" name="telefono" class="form-control" required oninput="this.value = this.value.toUpperCase()">
             </div>
+            <hr>
+            <h1>Datos del registro</h1>
+            <div class="form-group">
+                <label for="fecha_ing">Fecha Ingreso</label>
+                <input type="date" id="fecha_ing" name="fecha_ing" class="form-control" required readonly>
+            </div>
+            <div class="form-group">
+                <label for="parent">Parentesco</label>
+                <select name="parent" class="form-control" required>
+                    <option value="titular">Titular</option>
+                    <option value="padre">Padre</option>
+                    <option value="abuelo">Abuelo</option>
+                    <option value="hijo">Hijo</option>
+                    <option value="conyuge">Cónyuge</option>
+                </select>
+            </div>
             <div class="form-group">
                 <label for="seg_pop">Seguro Popular</label>
                 <input type="text" name="seg_pop" class="form-control" required oninput="this.value = this.value.toUpperCase()">
             </div>
             <div class="form-group">
                 <label for="vencimiento_sp">Vencimiento</label>
-                <input type="date" name="vencimiento_sp" class="form-control" required>
+                <input type="date" id="vencimiento_sp" name="vencimiento_sp" class="form-control" required readonly>
             </div>
             <div class="form-group">
                 <label for="gratuidad">Gratuidad</label>
@@ -168,6 +178,33 @@
             });
         });
     });
+</script>
+
+<script>
+    // Función para obtener la fecha actual en formato YYYY-MM-DD
+    function getCurrentDate() {
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+        let yyyy = today.getFullYear();
+        return yyyy + '-' + mm + '-' + dd;
+    }
+
+    // Función para establecer la fecha de vencimiento un año después de la fecha de ingreso
+    function setExpiryDate() {
+        let fechaIngreso = new Date(document.getElementById("fecha_ing").value);
+        fechaIngreso.setFullYear(fechaIngreso.getFullYear() + 1);
+        let dd = String(fechaIngreso.getDate()).padStart(2, '0');
+        let mm = String(fechaIngreso.getMonth() + 1).padStart(2, '0');
+        let yyyy = fechaIngreso.getFullYear();
+        document.getElementById("vencimiento_sp").value = yyyy + '-' + mm + '-' + dd;
+    }
+
+    // Ejecutar al cargar la página
+    window.onload = function() {
+        document.getElementById("fecha_ing").value = getCurrentDate();
+        setExpiryDate();
+    }
 </script>
 
 </body>

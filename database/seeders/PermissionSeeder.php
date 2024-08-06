@@ -36,10 +36,14 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'pacientes.destroy'])->syncRoles([$roleAdmin, $roleEmpleado]);
 
         // Permisos para el módulo de Admin
+        Permission::create(['name' => 'admin'])->syncRoles([$roleAdmin]);
         Permission::create(['name' => 'admin.index'])->syncRoles([$roleAdmin]);
         Permission::create(['name' => 'admin.users.index'])->syncRoles([$roleAdmin]);
         Permission::create(['name' => 'users.store'])->syncRoles([$roleAdmin]);
         Permission::create(['name' => 'users.update'])->syncRoles([$roleAdmin]);
         Permission::create(['name' => 'users.destroy'])->syncRoles([$roleAdmin]);
+
+        Permission::create(['name' => 'bitacora'])->syncRoles([$roleAdmin, $roleEmpleado]);
+        Permission::create(['name' => 'bitacora.update'])->syncRoles([$roleAdmin, $roleEmpleado]);
     }
 }

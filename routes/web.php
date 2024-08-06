@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BitacoraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,7 @@ Route::delete('/pacientes/eliminar/{id}', [App\Http\Controllers\PacientesControl
 
 
 //Estas son rutas para admin
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('can:admin')->name('admin');
 Route::get('/admin/users', [App\Http\Controllers\AdminController::class, 'listUsers'])->name('admin.users');
 Route::post('/users', [App\Http\Controllers\UserController::class, 'store'])->name('users.store');
 Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
@@ -67,6 +68,11 @@ Route::delete('/users/{user}', [App\Http\Controllers\UserController::class, 'des
 Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->name('bitacora');
 Route::get('bitacora/register', [App\Http\Controllers\BitacoraController::class, 'show'])->name('bitacora.registro');
 Route::post('bitacora', [App\Http\Controllers\BitacoraController::class, 'store'])->name('bitacora.store');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/bitacora', [App\Http\Controllers\BitacoraController::class, 'index'])->middleware('can:bitacora')->name('bitacora');
+    Route::put('/bitacora/update/{type}', [App\Http\Controllers\BitacoraController::class, 'update'])->name('bitacora.update');
+});
 
 
 
